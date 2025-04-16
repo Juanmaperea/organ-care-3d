@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // Corregido a react-router-dom
 import Home from "./pages/home/Home";
 import Quiz from "./pages/quiz/Quiz";
 import NotFound from "./pages/not-found/NotFound";
@@ -8,21 +8,24 @@ import HighBloodPressure from "./pages/heart/high-blood-pressure/HighBloodPressu
 import LowBloodPressure from "./pages/heart/low-blood-pressure/LowBloodPressure";
 import "./index.css";
 import Layout from "./layout/Layout";
-// import App from "./App";
+import Login from "./pages/login/Login";
 
 createRoot(document.getElementById("root")).render(
-   //<App />
   <BrowserRouter>
-    <Layout>
-      <Routes>
-        <Route index path="/" element={<Home />} />
+    <Routes>
+      {/* Ruta de login independiente */}
+      <Route path="/login" element={<Login />} />
+      
+      {/* Rutas con Layout */}
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
         <Route path="quiz" element={<Quiz />} />
-        <Route path="*" element={<NotFound />} />
         <Route path="corazon" element={<Heart />}>
           <Route path="presion-alta" element={<HighBloodPressure />} />
           <Route path="presion-baja" element={<LowBloodPressure />} />
         </Route>
-      </Routes>
-    </Layout>
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   </BrowserRouter>
 );
