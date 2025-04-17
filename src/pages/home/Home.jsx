@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink } from "react-router";
+
 import './Home.css';
 import eyeImage from '../../assets/eye.jpg'; 
 // Importa las imágenes de los iconos de enfermedades
@@ -57,7 +59,9 @@ const Home = () => {
               <img src={oceye} alt="Enfermedad 1" />
             </div>
             <h3 className="disease-name">ENFERMEDAD 1</h3>
+            <NavLink className="guest-text" to="/queratocono" end>
             <button className="disease-button">¡Ir aquí!</button>
+            </NavLink>
           </div>
           
           <div className="disease-card">

@@ -28,7 +28,7 @@ const Login = () => {
                         ¿No tienes una cuenta? <a href="/register">Regístrate aquí.</a>
                     </p>
                     <p >
-                    <NavLink className="guest-text" to="/home" end>
+                    <NavLink className="guest-text" to="/" end>
                         O continua como invitado.
                     </NavLink>
                     </p>
