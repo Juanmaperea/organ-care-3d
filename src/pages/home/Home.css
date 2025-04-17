@@ -1,0 +1,395 @@
+/* Home.css */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 80vh;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+  }
+  
+  .text-section {
+    flex: 1;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    align-items: start;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 500px;
+    text-align: justify;
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container {
+    top: 50px;
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .eye-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+  }
+  
+  .zoom-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .zoom-button {
+    width: 30px;
+    height: 30px;
+    color: #007491;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .zoom-button:hover {
+    color: #ffffff;
+  }
+  
+  .button-container {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .adventure-button {
+    background-color: #005571;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .adventure-button:hover {
+    background-color: #003f54;
+  }
+  
+  /* Estilos para la sección de enfermedades */
+  .diseases-section {
+    width: 100%;
+    padding: 3rem 0;
+    background: linear-gradient(to bottom, #00AFD7 0%, #00AFD7 30%, transparent 30%, transparent 70%, #00AFD7 70%, #00AFD7 100%);
+    margin-top: 3rem;
+  }
+  
+  .diseases-header {
+    text-align: right;
+    color: white;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .diseases-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .diseases-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .diseases-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .disease-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .disease-icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .disease-icon img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .disease-icon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .disease-icon-lightning {
+    position: absolute;
+    top: -20px;
+    width: 20px;
+    height: 40px;
+    background-color: #FF3366;
+    clip-path: polygon(50% 0%, 100% 50%, 75% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 50%);
+  }
+  
+  .disease-icon-lightning:nth-child(1) {
+    transform: rotate(-15deg) translateX(-20px);
+  }
+  
+  .disease-icon-lightning:nth-child(2) {
+    transform: translateY(-10px);
+  }
+  
+  .disease-icon-lightning:nth-child(3) {
+    transform: rotate(15deg) translateX(20px);
+  }
+  
+  .disease-icon-gear {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: #7FD126;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .disease-icon-gear::before {
+    content: "⚙️";
+    font-size: 24px;
+    color: white;
+  }
+  
+  .disease-icon-drops {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .disease-icon-drops::before,
+  .disease-icon-drops::after {
+    content: "";
+    width: 15px;
+    height: 20px;
+    background-color: #3399FF;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin: 3px;
+  }
+  
+  .disease-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .disease-button {
+    background-color: #005571;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .disease-button:hover {
+    background-color: #003f54;
+  }
+  
+  /* Estilos para la sección del Quiz */
+  .quiz-section {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+    margin-top: 3rem;
+    overflow: hidden;
+  }
+  
+  .quiz-content {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    z-index: 2;
+    padding: 0 2rem;
+  }
+  
+  .quiz-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .quiz-icon-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+  }
+  
+  .quiz-check-icon {
+    width: 230px;
+    height: 200px;
+    position: relative;
+    margin-left: -35px;
+    z-index: 2;
+  }
+  
+  
+  .quiz-subtitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-top: 55px;
+  }
+  
+  .quiz-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .quiz-button {
+    background-color: #005571;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .quiz-button:hover {
+    background-color: #003f54;
+  }
+  
+  .quiz-background-shape {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    background-color: #00AFD7;
+    border-radius: 0 50% 0 0;
+    z-index: 1;
+  }
+  
+  /* SVG para el icono de check */
+  .quiz-check-icon {
+    fill: #6AE06A;
+  }
+  
+  @media (max-width: 768px) {
+    .home-container {
+      background: white;
+    }
+    
+    .content-wrapper {
+      flex-direction: column;
+    }
+    
+    .text-section {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .image-container {
+      width: 100%;
+      padding-bottom: 100%;
+    }
+  
+    .diseases-header {
+      text-align: center;
+    }
+  
+    .diseases-cards {
+      gap: 1rem;
+    }
+    
+    .disease-card {
+      width: 100%;
+      max-width: 250px;
+    }
+    
+    .quiz-title {
+      font-size: 2rem;
+    }
+    
+    .quiz-background-shape {
+      width: 200px;
+      height: 200px;
+    }
+  }
