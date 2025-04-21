@@ -1,7 +1,7 @@
 import React from 'react';
 import './conjuntivitis.css';
-import ojoImage from '../../../assets/eye.jpg'; 
 import Eye from '../../home/models-3d/conjuntivitis/Eye';
+import Light from '../../home/lights/conjuntivitis/Lights';
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
@@ -26,8 +26,7 @@ function Conjuntivitis() {
           
           <div className="image-conjuntivi-section" >
           <Canvas camera={{ position: [2, 0, 5], fov: 50 }}>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[2, 2, 5]} />
+            <Light/>
             <OrbitControls />
             <Eye />
           </Canvas>
