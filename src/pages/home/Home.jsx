@@ -74,7 +74,9 @@ const Home = () => {
               </div>
             </div>
             <h3 className="disease-name">ENFERMEDAD 2</h3>
+            <NavLink className="guest-text" to="/conjuntivitis" end>
             <button className="disease-button">¡Ir aquí!</button>
+            </NavLink>
           </div>
           
           <div className="disease-card">

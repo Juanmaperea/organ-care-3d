@@ -10,6 +10,7 @@ import "./index.css";
 import Layout from "./layout/Layout";
 import Login from "./pages/login/Login";
 import Queratocono from "./pages/enfermedades/queratocono/Queratocono";
+import Conjuntivitis from "./pages/enfermedades/conjuntivitis/Conjuntivitis";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="queratocono" element={<Queratocono />} />
+        <Route path="conjuntivitis" element={<Conjuntivitis />} />
         <Route path="quiz" element={<Quiz />} />
         <Route path="corazon" element={<Heart />}>
           <Route path="presion-alta" element={<HighBloodPressure />} />
