@@ -6,16 +6,16 @@ const Eye = (props) => {
     const { nodes, materials } = useGLTF(
         "models-3d/conjuntivitis/eye-model-3d.glb"
     );
-    const eyeRef = useRef(); // referencia al grupo
+    const eyeRef = useRef();
 
     useFrame(() => {
         if (eyeRef.current) {
-            eyeRef.current.rotation.y += 0.005; // rota en el eje Y (horizontalmente)
+            eyeRef.current.rotation.y += 0.005;
         }
         });
 
     return (
-        <group {...props} dispose={null} scale={18} ref={eyeRef}>
+        <group {...props} dispose={null} scale={15} ref={eyeRef} position={[0, 0, 0]}>
             <mesh
             castShadow
             receiveShadow

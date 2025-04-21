@@ -25,10 +25,15 @@ function Conjuntivitis() {
           </div>
           
           <div className="image-conjuntivi-section" >
-          <Canvas camera={{ position: [2, 0, 5], fov: 50 }}>
+          <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
             <Light/>
             <OrbitControls />
             <Eye />
+
+            <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}>
+              <planeGeometry args={[20, 20]} />
+              <meshStandardMaterial color="white" />
+            </mesh>
           </Canvas>
         </div>
           
