@@ -47,12 +47,13 @@ function Conjuntivitis() {
         <div className="causa-section">
           <h2 className="section-title">¿QUÉ LA CAUSA?</h2>
           <p className="section-text">
-          La conjuntivitis puede ser causada por virus, bacterias, alergias o irritantes. Los virus son la causa
-           más común y altamente contagiosa, a menudo relacionada con resfriados u otras infecciones respiratorias. 
-           Las bacterias también son contagiosas y producen una secreción espesa de color amarillo o verdoso. Las 
-           alergias, provocadas por elementos como polvo, polen o pelo de animales, no son contagiosas. Los irritantes 
-           incluyen humo, cloro de piscinas, productos químicos o el uso prolongado de lentes de contacto. Todas 
-           estas causas generan inflamación en la conjuntiva.
+          Puede ser causada por virus, bacterias, alergias 
+          o sustancias irritantes. La más común es la viral, relacionada con resfriados y altamente contagiosa. 
+          La bacteriana también se contagia y produce secreción espesa, mientras que la alérgica y la provocada 
+          por irritantes como humo o cloro no son contagiosas. Los síntomas incluyen enrojecimiento, picazón, 
+          lagrimeo y sensación de arenilla. El tratamiento depende de la causa, y la prevención se basa en una 
+          buena higiene. Todas estas causas generan inflamación en la conjuntiva.Se debe consultar al médico si 
+          hay dolor, pérdida de visión o si los síntomas persisten. 
           </p>
         </div>
       </div>
