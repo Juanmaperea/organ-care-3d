@@ -17,17 +17,13 @@ const Home = () => {
       <div className="content-wrapper">
         <div className="text-section">
           <h1 className="title">
-            TÍTULO<br />EMOCIONANTE.
+          Explora el Ojo Humano:<br />Entiende las Enfermedades del Ojo y Protege tu Visión
           </h1>
           <p className="description">
-            Lorem ipsum dolor sit amet consectetur. 
-            Purus vel elit tincidunt viverra suspendisse ut 
-            feugiat faucibus. Condimentum massa 
-            ridiculus at porttitor sed suspendisse eleifend. 
-            Nunc mauris enim proin id lorem phasellus 
-            tincidunt. Elit cursus sit nulla suspendisse 
-            volutpat tempus sed scelerisque aliquam. 
-            Quam imperdiet montes sed ipsum.
+          Bienvenido a una experiencia inmersiva que te llevará al interior del ojo humano. 
+          A través de modelos 3D interactivos, podrás aprender sobre las enfermedades que afectan la visión, 
+          sus síntomas, tratamientos y cómo prevenirlas. 
+          ¡Descubre todo lo que puedes hacer para mantener tus ojos sanos y proteger tu vista!
           </p>
         </div>
         
@@ -50,7 +46,7 @@ const Home = () => {
       <div className="diseases-section">
         <div className="diseases-header">
           <h2 className="diseases-title">ANÍMATE A<br />APRENDER SOBRE ...</h2>
-          <p className="diseases-subtitle">Lorem ipsum dolor sit amet consectetur.</p>
+          <p className="diseases-subtitle">Las siguientes enfermedades</p>
         </div>
         
         <div className="diseases-cards">
@@ -58,7 +54,7 @@ const Home = () => {
             <div className="disease-icon">
               <img src={oceye} alt="Enfermedad 1" />
             </div>
-            <h3 className="disease-name">ENFERMEDAD 1</h3>
+            <h3 className="disease-name">QUERATOCONO</h3>
             <NavLink className="guest-text" to="/queratocono" end>
             <button className="disease-button">¡Ir aquí!</button>
             </NavLink>
@@ -73,8 +69,10 @@ const Home = () => {
                 <div className="disease-icon-lightning"></div>
               </div>
             </div>
-            <h3 className="disease-name">ENFERMEDAD 2</h3>
+            <h3 className="disease-name">CONJUNTIVITIS</h3>
+            <NavLink className="guest-text" to="/conjuntivitis" end>
             <button className="disease-button">¡Ir aquí!</button>
+            </NavLink>
           </div>
           
           <div className="disease-card">
@@ -82,7 +80,7 @@ const Home = () => {
               <img src={oceye} alt="Enfermedad 3" />
               <div className="disease-icon-gear"></div>
             </div>
-            <h3 className="disease-name">ENFERMEDAD 3</h3>
+            <h3 className="disease-name">GLAUCOMA</h3>
             <button className="disease-button">¡Ir aquí!</button>
           </div>
           
@@ -91,7 +89,7 @@ const Home = () => {
               <img src={oceye} alt="Enfermedad 4" />
               <div className="disease-icon-drops"></div>
             </div>
-            <h3 className="disease-name">ENFERMEDAD 4</h3>
+            <h3 className="disease-name">CATARATA</h3>
             <button className="disease-button">¡Ir aquí!</button>
           </div>
         </div>
