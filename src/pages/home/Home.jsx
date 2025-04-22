@@ -81,7 +81,9 @@ const Home = () => {
               <div className="disease-icon-gear"></div>
             </div>
             <h3 className="disease-name">GLAUCOMA</h3>
+            <NavLink className="guest-text" to="/glaucoma" end>
             <button className="disease-button">¡Ir aquí!</button>
+            </NavLink>
           </div>
           
           <div className="disease-card">
