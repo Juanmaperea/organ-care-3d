@@ -1,5 +1,5 @@
 import React from 'react';
-import './glaucoma.css';
+import './Glaucoma.css';
 import ojoImage from '../../../assets/glaucoma-eye.jpg'; 
 
 function Glaucoma() {
