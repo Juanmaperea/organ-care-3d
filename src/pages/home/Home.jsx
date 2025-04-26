@@ -1,24 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { React, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { NavLink } from "react-router";
-
 import './Home.css';
 import eyeImage from '../../assets/eye.jpg'; 
 // Importa las imágenes de los iconos de enfermedades
 import oceye from '../../assets/oc-eye.gif'; 
 
 // Icono para el quiz
-import checkIcon from '../../assets/check-icon.png';
+import checkIcon from '../../assets/check-Icon.png';
 
 const Home = () => {
+  const location = useLocation();
+
+  // Dirige a la sección de enfermedades
+  useEffect(() => {
+    if (location.pathname === "/enfermedades") {
+      const diseasesSection = document.getElementById("diseases-section");
+      if (diseasesSection) {
+        diseasesSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="home-container">
       {/* Primera sección - Hero */}
-      <div className="content-wrapper">
-        <div className="text-section">
-          <h1 className="title">
+      <h1 className="title">
           Explora el Ojo Humano:<br />Entiende las Enfermedades del Ojo y Protege tu Visión
-          </h1>
+      </h1> 
+      <div className="content-wrapper">
+      
+        <div className="text-section">
+          
           <p className="description">
           Bienvenido a una experiencia inmersiva que te llevará al interior del ojo humano. 
           A través de modelos 3D interactivos, podrás aprender sobre las enfermedades que afectan la visión, 
@@ -43,7 +56,7 @@ const Home = () => {
       </div>
 
       {/* Segunda sección - Enfermedades */}
-      <div className="diseases-section">
+      <div id="diseases-section" className="diseases-section">
         <div className="diseases-header">
           <h2 className="diseases-title">ANÍMATE A<br />APRENDER SOBRE ...</h2>
           <p className="diseases-subtitle">Las siguientes enfermedades</p>

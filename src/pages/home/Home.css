@@ -16,6 +16,8 @@
   
   .text-section {
     flex: 1;
+    margin-top:  2rem;
+    margin-left: 10rem;
     padding-right: 2rem;
     display: flex;
     flex-direction: column;
@@ -25,16 +27,18 @@
   .title {
     font-size: 2.5rem;
     font-weight: bold;
+    margin-top: 40px;
+    margin-left: 2.0rem;
     margin-bottom: 1.5rem;
     line-height: 1.1;
-    align-items: start;
+    align-items: center;
+    position: static;
   }
   
   .description {
     font-size: 1rem;
     line-height: 1.5;
     max-width: 500px;
-    text-align: justify;
   }
   
   .image-section {
@@ -121,17 +125,19 @@
   }
   
   .diseases-header {
-    text-align: right;
+    text-align: center;
     color: white;
     padding: 0 2rem;
     margin-bottom: 2rem;
   }
   
   .diseases-title {
+    text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
+    margin-top: -5px;
   }
   
   .diseases-subtitle {

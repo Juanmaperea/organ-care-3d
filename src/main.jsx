@@ -22,6 +22,7 @@ createRoot(document.getElementById("root")).render(
       {/* Rutas con Layout */}
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="enfermedades" element={<Home />}/>
         <Route path="queratocono" element={<Queratocono />} />
         <Route path="conjuntivitis" element={<Conjuntivitis />} />
         <Route path="glaucoma" element={<Glaucoma />} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import './conjuntivitis.css';
+import './Conjuntivitis.css';
 import Eye from '../../home/models-3d/conjuntivitis/Eye';
 import Light from '../../home/lights/conjuntivitis/Lights';
 
