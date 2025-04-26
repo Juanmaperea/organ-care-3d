@@ -1,5 +1,5 @@
 import React from 'react';
-import './conjuntivitis.css';
+import './Conjuntivitis.css';
 import Eye from '../../home/models-3d/conjuntivitis/Eye';
 import Light from '../../home/lights/conjuntivitis/Lights';
 
@@ -16,11 +16,8 @@ function Conjuntivitis() {
           <div className="info-section que-es">
             <h2 className="section-title">¿QUÉ ES?</h2>
             <p className="section-text">
-            La conjuntivitis es una inflamación de la conjuntiva, la membrana que recubre la parte blanca del 
-            ojo y el interior de los párpados. Puede ser causada por virus, bacterias, alergias o irritantes, 
-            y se manifiesta con enrojecimiento, picazón, lagrimeo, secreción y sensación de molestia en los ojos. 
-            Es una afección común, generalmente leve, pero en los casos infecciosos puede ser muy contagiosa. 
-            Con el tratamiento adecuado, suele curarse sin dejar secuelas.
+            La conjuntivitis es una inflamación de la conjuntiva, causada por virus, bacterias, alergias o 
+            irritantes. Es común, leve y suele curarse sin secuelas, aunque puede ser muy contagiosa.
             </p>
           </div>
           
@@ -40,11 +37,8 @@ function Conjuntivitis() {
           <div className="info-section efectos">
             <h2 className="section-title">¿QUÉ EFECTOS TIENE?</h2>
             <p className="section-text">
-            La conjuntivitis produce efectos como enrojecimiento ocular, picazón, ardor, lagrimeo excesivo, 
-            sensación de tener arena en el ojo, secreción (que puede ser clara o espesa), visión borrosa 
-            temporal y, en casos infecciosos, los párpados pueden amanecer pegados. Cuando es viral o bacteriana, 
-            es altamente contagiosa. Aunque suele ser una afección leve, si no se trata adecuadamente puede 
-            causar molestias prolongadas o, en raros casos, complicaciones oculares.
+            Produce enrojecimiento, picazón, ardor, secreción, lagrimeo, visión borrosa y sensación de arenilla.
+            Si no se trata adecuadamente, puede generar molestias oculares persistentes.
             </p>
           </div>
         </div>
@@ -52,13 +46,10 @@ function Conjuntivitis() {
         <div className="causa-section">
           <h2 className="section-title">¿QUÉ LA CAUSA?</h2>
           <p className="section-text">
-          Puede ser causada por virus, bacterias, alergias 
-          o sustancias irritantes. La más común es la viral, relacionada con resfriados y altamente contagiosa. 
-          La bacteriana también se contagia y produce secreción espesa, mientras que la alérgica y la provocada 
-          por irritantes como humo o cloro no son contagiosas. Los síntomas incluyen enrojecimiento, picazón, 
-          lagrimeo y sensación de arenilla. El tratamiento depende de la causa, y la prevención se basa en una 
-          buena higiene. Todas estas causas generan inflamación en la conjuntiva.Se debe consultar al médico si 
-          hay dolor, pérdida de visión o si los síntomas persisten. 
+          Las causas incluyen virus, bacterias, alergias o irritantes. La viral es la más común y contagiosa.
+          La bacteriana también se contagia y genera secreción espesa. Las alérgicas e irritativas no son 
+          contagiosas. La prevención se basa en buena higiene y se recomienda consultar al médico si los 
+          síntomas persisten o hay dolor o pérdida de visión.
           </p>
         </div>
       </div>

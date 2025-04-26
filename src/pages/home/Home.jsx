@@ -7,7 +7,7 @@ import eyeImage from '../../assets/eye.jpg';
 import oceye from '../../assets/oc-eye.gif'; 
 
 // Icono para el quiz
-import checkIcon from '../../assets/check-icon.png';
+import checkIcon from '../../assets/check-Icon.png';
 
 const Home = () => {
   const location = useLocation();

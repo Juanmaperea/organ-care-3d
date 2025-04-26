@@ -1,5 +1,5 @@
 import React from 'react';
-import './queratocono.css';
+import './Queratocono.css';
 import Eye from '../../home/models-3d/queratocono/Eye';
 import Light from '../../home/lights/queratocono/Lights';
 
