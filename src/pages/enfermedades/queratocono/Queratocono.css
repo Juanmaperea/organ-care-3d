@@ -68,6 +68,76 @@
   .efectos {
     text-align: center;
   }
+
+  
+
+  .sintomas-section {
+    background-color: #00AEEF; /* Azul */
+    position: relative; /* Para posicionar elementos hijos */
+    height: 600px; /* Altura fija, puedes ajustar */
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .sintomas-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .sintomas-container {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Importante para los hijos posicionados */
+  }
+  
+  .sintoma-card {
+    position: absolute;
+    width: 250px; /* o lo que necesites */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sintoma-card:first-child {
+    top: 30px;
+    left: 30px;
+  }
+  
+  .sintoma-card:last-child {
+    bottom: 30px;
+    right: 30px;
+  }
+  
+
+  .sintoma-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: black;
+  }
+  
+  .sintoma-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .sintoma-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+
   
   /* Media queries para responsividad */
   @media (max-width: 768px) {
@@ -83,5 +153,10 @@
     
     .causa-section {
       padding: 0 5%;
+    }
+
+    .sintomas-container {
+      flex-direction: column;
+      align-items: center;
     }
   }

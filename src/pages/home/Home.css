@@ -353,11 +353,67 @@
     z-index: 1;
   }
   
-  /* SVG para el icono de check */
-  .quiz-check-icon {
-    fill: #6AE06A;
+  .about-us {
+    background-image: url('../../assets/OrganCare3D_Transparente.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .box-about-us {
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    max-width: 100%;
+    max-height: 100%;
+    padding: 20px 40px;
   }
   
+  .title-about-us {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .description-about-us {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .cards-about-us {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .card-about-us {
+    background-color:rgba(241, 241, 241, 0.9);
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .card-about-us h2 {
+    font-size: 1.5rem;
+    color: #00416d;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-about-us p {
+    margin: 0.5rem 0;
+  }
+  
+  .email-about-us {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
   @media (max-width: 768px) {
     .home-container {
       background: white;
@@ -397,5 +453,10 @@
     .quiz-background-shape {
       width: 200px;
       height: 200px;
+    }
+
+    .cards-about-us {
+      flex-direction: column;
+      align-items: center;
     }
   }
