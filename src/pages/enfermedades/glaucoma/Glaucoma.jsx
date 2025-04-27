@@ -1,6 +1,9 @@
 import React from 'react';
 import './Glaucoma.css';
-import ojoImage from '../../../assets/glaucoma-eye.jpg'; 
+import Eye from '../../home/models-3d/glaucoma/Eye';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import Light from '../../home/lights/glaucoma/Lights';
 
 function Glaucoma() {
   return (
@@ -20,7 +23,18 @@ function Glaucoma() {
         </div>
         
         <div className="image-glaucoma-section">
-          <img src={ojoImage} alt="Ojo con glaucoma" className="eye-glaucoma-image" />
+          <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[2, 2, 5]} />
+            <Light/>
+            <OrbitControls />
+            <Eye />
+
+            <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}>
+              <planeGeometry args={[20, 20]} />
+              <meshStandardMaterial color="white" />
+            </mesh>
+          </Canvas>
         </div>
         
         <div className="info-section efectos">
