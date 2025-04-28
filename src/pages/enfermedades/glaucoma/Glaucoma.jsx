@@ -4,6 +4,7 @@ import Eye from '../../home/models-3d/glaucoma/Eye';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import Light from '../../home/lights/glaucoma/Lights';
+import Floor from "../../home/textures/glaucoma/Floor";
 
 function Glaucoma() {
   return (
@@ -25,11 +26,7 @@ function Glaucoma() {
             <Light/>
             <OrbitControls />
             <Eye />
-
-            <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}>
-              <planeGeometry args={[20, 20]} />
-              <meshStandardMaterial color="red" />
-            </mesh>
+            <Floor />
           </Canvas>
         </div>
         
