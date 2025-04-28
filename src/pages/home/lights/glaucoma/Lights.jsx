@@ -10,11 +10,11 @@ const Lights = () => {
 
   return (
     <>
-      <ambientLight color={"#F5F5DC"} intensity={3} />
+      <ambientLight color={"#F5F5DC"} intensity={10} />
       <directionalLight
         //ref={directionalLightRef}
         color="white"
-        intensity={3.5}
+        intensity={10}
         position={[5, 10, 5]}
         castShadow
         shadow-mapSize-width={2048}
@@ -26,6 +26,30 @@ const Lights = () => {
         shadow-camera-near={1}
         shadow-camera-far={30}
         />
+      <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={2}
+        position={[-5, -10, -5]}
+      />
+      <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={3}
+        position={[0, 10, 0]}
+      />
+      <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={3}
+        position={[10, 0, 0]}
+      />
+      <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={3}
+        position={[0, 0, 10]}
+      />
     </>
   );
 };
