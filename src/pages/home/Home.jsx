@@ -1,13 +1,13 @@
-import { React, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { React, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { NavLink } from "react-router";
-import './Home.css';
-import eyeImage from '../../assets/eye.jpg'; 
+import "./Home.css";
+import eyeImage from "../../assets/eye.jpg";
 // Importa las imágenes de los iconos de enfermedades
-import oceye from '../../assets/oc-eye.gif'; 
+import oceye from "../../assets/oc-eye.gif";
 
 // Icono para el quiz
-import checkIcon from '../../assets/check-Icon.png';
+import checkIcon from "../../assets/check-Icon.png";
 
 const Home = () => {
   const location = useLocation();
@@ -20,26 +20,33 @@ const Home = () => {
         diseasesSection.scrollIntoView({ behavior: "smooth" });
       }
     }
+    if (location.pathname === "/nosotros") {
+      const diseasesSection = document.getElementById("about-us");
+      if (diseasesSection) {
+        diseasesSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   }, [location]);
 
   return (
     <div className="home-container">
       {/* Primera sección - Hero */}
       <h1 className="title">
-          Explora el Ojo Humano:<br />Entiende las Enfermedades del Ojo y Protege tu Visión
-      </h1> 
+        Explora el Ojo Humano:
+        <br />
+        Entiende las Enfermedades del Ojo y Protege tu Visión
+      </h1>
       <div className="content-wrapper">
-      
         <div className="text-section">
-          
           <p className="description">
-          Bienvenido a una experiencia inmersiva que te llevará al interior del ojo humano. 
-          A través de modelos 3D interactivos, podrás aprender sobre las enfermedades que afectan la visión, 
-          sus síntomas, tratamientos y cómo prevenirlas. 
-          ¡Descubre todo lo que puedes hacer para mantener tus ojos sanos y proteger tu vista!
+            Bienvenido a una experiencia inmersiva que te llevará al interior
+            del ojo humano. A través de modelos 3D interactivos, podrás aprender
+            sobre las enfermedades que afectan la visión, sus síntomas,
+            tratamientos y cómo prevenirlas. ¡Descubre todo lo que puedes hacer
+            para mantener tus ojos sanos y proteger tu vista!
           </p>
         </div>
-        
+
         <div className="image-section">
           <div className="image-container">
             <img src={eyeImage} alt="Ojo humano" className="eye-image" />
@@ -50,18 +57,23 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="button-container">
-        <button className="adventure-button">¡Comienza tu aventura aquí!</button>
+        <button className="adventure-button">
+          ¡Comienza tu aventura aquí!
+        </button>
       </div>
 
       {/* Segunda sección - Enfermedades */}
       <div id="diseases-section" className="diseases-section">
         <div className="diseases-header">
-          <h2 className="diseases-title">ANÍMATE A<br />APRENDER SOBRE ...</h2>
+          <h2 className="diseases-title">
+            ANÍMATE A<br />
+            APRENDER SOBRE ...
+          </h2>
           <p className="diseases-subtitle">Las siguientes enfermedades</p>
         </div>
-        
+
         <div className="diseases-cards">
           <div className="disease-card">
             <div className="disease-icon">
@@ -69,10 +81,10 @@ const Home = () => {
             </div>
             <h3 className="disease-name">QUERATOCONO</h3>
             <NavLink className="guest-text" to="/queratocono" end>
-            <button className="disease-button">¡Ir aquí!</button>
+              <button className="disease-button">¡Ir aquí!</button>
             </NavLink>
           </div>
-          
+
           <div className="disease-card">
             <div className="disease-icon">
               <img src={oceye} alt="Enfermedad 2" />
@@ -84,10 +96,10 @@ const Home = () => {
             </div>
             <h3 className="disease-name">CONJUNTIVITIS</h3>
             <NavLink className="guest-text" to="/conjuntivitis" end>
-            <button className="disease-button">¡Ir aquí!</button>
+              <button className="disease-button">¡Ir aquí!</button>
             </NavLink>
           </div>
-          
+
           <div className="disease-card">
             <div className="disease-icon">
               <img src={oceye} alt="Enfermedad 3" />
@@ -95,10 +107,10 @@ const Home = () => {
             </div>
             <h3 className="disease-name">GLAUCOMA</h3>
             <NavLink className="guest-text" to="/glaucoma" end>
-            <button className="disease-button">¡Ir aquí!</button>
+              <button className="disease-button">¡Ir aquí!</button>
             </NavLink>
           </div>
-          
+
           <div className="disease-card">
             <div className="disease-icon">
               <img src={oceye} alt="Enfermedad 4" />
@@ -114,23 +126,67 @@ const Home = () => {
       <div className="quiz-section">
         <div className="quiz-content">
           <h2 className="quiz-title">¿TE ATREVES A INTENTARLO?</h2>
-          
+
           <div className="quiz-icon-container">
             <img src={checkIcon} alt="Quiz check" className="quiz-check-icon" />
           </div>
-          
+
           <h3 className="quiz-subtitle">Quiz Interactivo</h3>
-          
+
           <p className="quiz-description">
-            Demuestra tu aprendizaje sobre las enfermedades y autocuidado de este órgano.
+            Demuestra tu aprendizaje sobre las enfermedades y autocuidado de
+            este órgano.
           </p>
-          
+
           <Link to="/quiz" className="quiz-button">
             Intentar
           </Link>
         </div>
         <div className="quiz-background-shape"></div>
       </div>
+      <section id="about-us" className="about-us">
+        <div className="box-about-us">
+        <h1 className="title-about-us">SOBRE NOSOTROS...</h1>
+        <p className="description-about-us">
+          OrganCare3D nace como una propuesta para enseñar e ilustrar a las
+          personas de forma dinámica, pedagógica y creativa sobre las
+          enfermedades que afectan a los distintos órganos del cuerpo humano;
+          específicamente el ojo. Parte de esta iniciativa no sería posible sin
+          el arduo trabajo de los integrantes del grupo que la componen:
+        </p>
+
+        <div className="cards-about-us">
+          <div className="card-about-us">
+            <h2>Erika García</h2>
+            <p>Estudiante de la Universidad del Valle</p>
+            <p className="email-about-us">
+              erika.garcia.munoz@correounivalle.edu.co
+            </p>
+          </div>
+          <div className="card-about-us">
+            <h2>Juan Perea</h2>
+            <p>Estudiante de la Universidad del Valle</p>
+            <p className="email-about-us">
+              juan.coronado@correounivalle.edu.co
+            </p>
+          </div>
+          <div className="card-about-us">
+            <h2>Sebastián Bolaños</h2>
+            <p>Estudiante de la Universidad del Valle</p>
+            <p className="email-about-us">
+              sebastian.bolanos@correounivalle.edu.co
+            </p>
+          </div>
+          <div className="card-about-us">
+            <h2>Johan Riveros</h2>
+            <p>Estudiante de la Universidad del Valle</p>
+            <p className="email-about-us">
+              johan.riveros@correounivalle.edu.co
+            </p>
+          </div>
+        </div>
+        </div>
+      </section>
     </div>
   );
 };

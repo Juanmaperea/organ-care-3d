@@ -6,7 +6,8 @@ import Light from '../../home/lights/queratocono/Lights';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import ojoImage from '../../../assets/eye.jpg'; 
-
+import sintomaImg1 from '../../../assets/sintoma_queratocono_img1.png'; 
+import sintomaImg2 from '../../../assets/sintoma_queratocono_img2.jpg'; 
 
 
 function Queratocono() {
@@ -59,6 +60,34 @@ function Queratocono() {
         el síndrome de Down, el síndrome de Ehlers-Danlos y el asma.
         </p>
       </div>
+
+      {/* NUEVA SECCIÓN: SÍNTOMAS */}
+      <div className="sintomas-section">
+        <h2 className="sintomas-title">SÍNTOMAS</h2>
+        <div className="sintomas-container">
+
+          <div className="sintoma-card">
+            <h3 className="sintoma-subtitle">SÍNTOMA 1</h3>
+            <p className="sintoma-text">
+              El queratocono puede causar visión borrosa progresiva, visión distorsionada y aumento de la sensibilidad a la luz.
+            </p>
+            <img src={sintomaImg1} alt="Síntoma 1" className="sintoma-image" />
+          </div>
+
+          <div className="sintoma-card">
+            <h3 className="sintoma-subtitle">SÍNTOMA 2</h3>
+            <p className="sintoma-text">
+              También se presentan cambios frecuentes en la graduación de los lentes y dificultad para ver de noche.
+            </p>
+            <img src={sintomaImg2} alt="Síntoma 2" className="sintoma-image" />
+          </div>
+
+        </div>
+      </div>
+
+
+
+
     </div>
   );
 }

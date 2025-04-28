@@ -15,10 +15,13 @@ const Eye = (props) => {
         });
 
     return (
-        <group {...props} dispose={null} scale={15} ref={eyeRef} position={[0, 0, 0]}>
+        <group {...props} dispose={null} ref={eyeRef} position={[0, 0, 0]}>
             <mesh
-                geometry={nodes.GlaucomaEye.geometry}
-                material={materials.GlaucomaEyeMaterial}
+            castShadow
+            receiveShadow
+            geometry={nodes.GlaucomaEye.geometry}
+            material={materials.GlaucomaEyeMaterial}
+            scale={100}
             />
         </group>
     );
