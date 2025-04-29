@@ -15,7 +15,7 @@ const Eye = (props) => {
         });
 
     return (
-        <group {...props} dispose={null} scale={15} ref={eyeRef} position={[0, 0, 0]}>
+        <group {...props} dispose={null} scale={20} ref={eyeRef} position={[0, 0, 0]}>
             <mesh
             castShadow
             receiveShadow
