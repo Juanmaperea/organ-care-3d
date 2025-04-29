@@ -9,6 +9,11 @@ import oceye from "../../assets/oc-eye.gif";
 // Icono para el quiz
 import checkIcon from "../../assets/check-Icon.png";
 
+import Eye from './models-3d/home/Eye';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import Light from './lights/home/Lights';
+
 const Home = () => {
   const location = useLocation();
 
@@ -49,17 +54,22 @@ const Home = () => {
 
         <div className="image-section">
           <div className="image-container">
-            <img src={eyeImage} alt="Ojo humano" className="eye-image" />
-            <div className="zoom-controls">
-              <button className="zoom-button zoom-in">+</button>
-              <button className="zoom-button zoom-out">-</button>
-            </div>
+            <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
+              <Light/>
+              <OrbitControls />
+              <Eye />
+            </Canvas>
           </div>
         </div>
       </div>
 
       <div className="button-container">
-        <button className="adventure-button">
+        <button
+        className="adventure-button"
+        onClick={() => {
+          document.getElementById("diseases-section")?.scrollIntoView({ behavior: "smooth" });
+        }}
+        >
           ¡Comienza tu aventura aquí!
         </button>
       </div>
