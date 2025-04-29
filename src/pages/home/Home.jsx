@@ -126,7 +126,9 @@ const Home = () => {
               <div className="disease-icon-drops"></div>
             </div>
             <h3 className="disease-name">CATARATA</h3>
-            <button className="disease-button">¡Ir aquí!</button>
+            <NavLink className="guest-text" to="/cataratas" end>
+              <button className="disease-button">¡Ir aquí!</button>
+            </NavLink>
           </div>
         </div>
       </div>
