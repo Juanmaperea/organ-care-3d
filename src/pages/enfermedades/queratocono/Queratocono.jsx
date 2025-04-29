@@ -13,6 +13,7 @@ import sintomaImg2 from '../../../assets/sintoma_queratocono_img2.jpg';
 function Queratocono() {
   return (
     <div className="queratocono-container">
+      
       <h1 className="enfermedad-title">QUERATOCONO</h1>
       
       <div className="info-container">
@@ -61,7 +62,7 @@ function Queratocono() {
         </p>
       </div>
 
-      {/* NUEVA SECCIÓN: SÍNTOMAS */}
+      {/*SECCIÓN: SÍNTOMAS */}
       <div className="sintomas-section">
         <h2 className="sintomas-title">SÍNTOMAS</h2>
         <div className="sintomas-container">

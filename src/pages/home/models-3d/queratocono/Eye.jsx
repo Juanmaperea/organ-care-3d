@@ -9,7 +9,7 @@ const Eye = (props) => {
 
     useFrame(() => {
         if (eyeRef.current) {
-            eyeRef.current.rotation.y += 0.005;  // Rotacion
+            eyeRef.current.rotation.y += 0.006;  // Rotacion
         }
         });
 

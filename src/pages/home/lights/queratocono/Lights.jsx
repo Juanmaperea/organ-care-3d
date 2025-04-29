@@ -11,11 +11,11 @@ const Lights = () => {
   return (
     <>
        {/* Luces*/}
-      <ambientLight color={"#F5F5DC"} intensity={5} /> 
+      <ambientLight color={"#F5F5DC"} intensity={3.5} /> 
       <directionalLight
         //ref={directionalLightRef}
         color="white"
-        intensity={5.5}
+        intensity={4}
         position={[5, 10, 5]}
         castShadow
         shadow-mapSize-width={2048}
