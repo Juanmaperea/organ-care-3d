@@ -44,11 +44,10 @@ const Home = () => {
       <div className="content-wrapper">
         <div className="text-section">
           <p className="description">
-            Bienvenido a una experiencia inmersiva que te llevará al interior
-            del ojo humano. A través de modelos 3D interactivos, podrás aprender
-            sobre las enfermedades que afectan la visión, sus síntomas,
-            tratamientos y cómo prevenirlas. ¡Descubre todo lo que puedes hacer
-            para mantener tus ojos sanos y proteger tu vista!
+            Bienvenido a una experiencia inmersiva que te llevará al interior del ojo humano. 
+            A través de modelos 3D interactivos, podrás aprender sobre las enfermedades 
+            que afectan la visión, sus síntomas, tratamientos y cómo prevenirlas. 
+            ¡Descubre todo lo que puedes hacer para mantener tus ojos sanos y proteger tu vista!
           </p>
         </div>
 
@@ -127,7 +126,9 @@ const Home = () => {
               <div className="disease-icon-drops"></div>
             </div>
             <h3 className="disease-name">CATARATA</h3>
-            <button className="disease-button">¡Ir aquí!</button>
+            <NavLink className="guest-text" to="/cataratas" end>
+              <button className="disease-button">¡Ir aquí!</button>
+            </NavLink>
           </div>
         </div>
       </div>

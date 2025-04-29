@@ -1,0 +1,90 @@
+.cataratas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .enfermedad-title {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .info-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .info-section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .section-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .image-cataratas
+-section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .eye-cataratas
+-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+
+  .causa-section {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 15%;
+  }
+  
+  .que-es {
+    text-align: center;
+  }
+  
+  .efectos {
+    text-align: center;
+  }
+  
+  /* Media queries para responsividad */
+  @media (max-width: 768px) {
+    .info-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .info-section, .image-cataratas
+  -section {
+      width: 90%;
+      margin-bottom: 30px;
+    }
+    
+    .causa-section {
+      padding: 0 5%;
+    }
+  }

@@ -12,6 +12,7 @@ import Login from "./pages/login/Login";
 import Queratocono from "./pages/enfermedades/queratocono/Queratocono";
 import Conjuntivitis from "./pages/enfermedades/conjuntivitis/Conjuntivitis";
 import Glaucoma from "./pages/enfermedades/glaucoma/Glaucoma";
+import Cataratas from "./pages/enfermedades/cataratas/Cataratas";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="queratocono" element={<Queratocono />} />
         <Route path="conjuntivitis" element={<Conjuntivitis />} />
         <Route path="glaucoma" element={<Glaucoma />} />
+        <Route path="cataratas" element={<Cataratas />} />
         <Route path="quiz" element={<Quiz />} />
         <Route path="corazon" element={<Heart />}>
           <Route path="presion-alta" element={<HighBloodPressure />} />
