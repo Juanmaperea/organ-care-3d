@@ -1,9 +1,9 @@
 import React from 'react';
 import './Conjuntivitis.css';
-import Eye from '../../home/models-3d/conjuntivitis/Eye';
-import Light from '../../home/lights/conjuntivitis/Lights';
-import Headache from '../../home/models-3d/conjuntivitis/Headache';
-import LightModel2 from '../../home/lights/conjuntivitis/LightsModel2';
+import Eye from './models-3d/Eye';
+import Light from './lights/Lights';
+import Headache from './models-3d/Headache';
+import LightModel2 from './lights/LightsModel2';
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
