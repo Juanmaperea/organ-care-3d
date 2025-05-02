@@ -1,15 +1,24 @@
 import React from 'react';
 import './Conjuntivitis.css';
-import Eye from '../../home/models-3d/conjuntivitis/Eye';
-import Light from '../../home/lights/conjuntivitis/Lights';
-import Headache from '../../home/models-3d/conjuntivitis/Headache';
-import LightModel2 from '../../home/lights/conjuntivitis/LightsModel2';
+import Eye from './models-3d/Eye';
+import Light from './lights/Lights';
+import Headache from './models-3d/Headache';
+import LightModel2 from './lights/LightsModel2';
+import AnimatedClouds from './lights/AnimationLights/AnimatedClouds';
+import Controls from "./controls/Controls";
+import Title from "./texts/Title";
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { Sky, Cloud } from '@react-three/drei';
 
 
-function Conjuntivitis() {
+
+import { useRef } from 'react';
+
+export default function Conjuntivitis() {
+  const modelRef = useRef();
+  const zoomContainerRef = useRef();
     return (
       <div className="conjuntivitis-container">
         <h1 className="enfermedad-title">CONJUNTIVITIS</h1>
@@ -67,24 +76,31 @@ function Conjuntivitis() {
               Los síntomas de la conjuntivitis incluyen enrojecimiento ocular, picazón, lagrimeo, 
               sensación de cuerpo extraño, párpados pegajosos y secreción (clara en casos virales, 
               espesa en bacterianos, y acompañada de picor intenso en los alérgicos), y en algunos 
-              casos puede presentarse dolor de cabeza leve asociado al malestar ocular.
+              casos puede presentarse dolor de cabeza asociado al malestar ocular.
               </p>
             </div>
 
-            <div className="sintoma-card-conjunti">
-              <h3 className="sintoma-subtitle-conjunti">DOLOR DE CABEZA</h3>
+            <div className="sintoma-card-conjunti" style={{ position: 'relative', height: '400px' }} ref={zoomContainerRef}>
               <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
+                {/* Elemento ambiental */}
+                <Sky sunPosition={[100, 20, 100]} />
+                <AnimatedClouds />
+
+                <Title title={"DOLOR DE CABEZA"} />
                 <LightModel2/>
-                <OrbitControls />
-                <Headache />
+                <Headache ref={modelRef} />
+                <Controls targetRef={modelRef} zoomTargetRef={zoomContainerRef}  />
 
                 {/* Piso de la escena */}
-                <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}> 
+                <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.5, 0]}> 
                   <planeGeometry args={[20, 20]} />
                   <meshStandardMaterial color="cyan" />
                 </mesh>
 
               </Canvas>
+              <div className="sintoma-nota-conjunti">
+                💡 Haz clic en el modelo para que sude. Usa las teclas ← y → para moverlo.
+              </div>
             </div>
 
           </div>
@@ -94,4 +110,4 @@ function Conjuntivitis() {
     );
   }
   
-  export default Conjuntivitis;
+  //export default Conjuntivitis;
