@@ -5,6 +5,7 @@ import Light from './lights/Lights';
 import Headache from './models-3d/Headache';
 import LightModel2 from './lights/LightsModel2';
 import Controls from "./controls/Controls";
+import Title from "./texts/Title";
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
@@ -75,14 +76,14 @@ export default function Conjuntivitis() {
             </div>
 
             <div className="sintoma-card-conjunti" style={{ position: 'relative', height: '400px' }}>
-              <h3 className="sintoma-subtitle-conjunti">DOLOR DE CABEZA</h3>
               <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
+                <Title title={"DOLOR DE CABEZA"} />
                 <LightModel2/>
                 <Headache ref={modelRef} />
                 <Controls targetRef={modelRef} />
 
                 {/* Piso de la escena */}
-                <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}> 
+                <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.5, 0]}> 
                   <planeGeometry args={[20, 20]} />
                   <meshStandardMaterial color="cyan" />
                 </mesh>

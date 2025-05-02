@@ -8,7 +8,7 @@ const Headache = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => modelRef.current);
 
   return (
-    <group {...props} ref={modelRef} dispose={null} scale={1.8} position={[0, 0.5, 0]}>
+    <group {...props} ref={modelRef} dispose={null} scale={1.8} position={[0, -0.3, 0]}>
       <mesh
         castShadow
         receiveShadow
