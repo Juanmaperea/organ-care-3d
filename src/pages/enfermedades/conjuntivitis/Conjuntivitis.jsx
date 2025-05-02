@@ -4,11 +4,15 @@ import Eye from './models-3d/Eye';
 import Light from './lights/Lights';
 import Headache from './models-3d/Headache';
 import LightModel2 from './lights/LightsModel2';
+import AnimatedClouds from './lights/AnimationLights/AnimatedClouds';
 import Controls from "./controls/Controls";
 import Title from "./texts/Title";
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { Sky, Cloud } from '@react-three/drei';
+
+
 
 import { useRef } from 'react';
 
@@ -78,6 +82,10 @@ export default function Conjuntivitis() {
 
             <div className="sintoma-card-conjunti" style={{ position: 'relative', height: '400px' }} ref={zoomContainerRef}>
               <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
+                {/* Elemento ambiental */}
+                <Sky sunPosition={[100, 20, 100]} />
+                <AnimatedClouds />
+
                 <Title title={"DOLOR DE CABEZA"} />
                 <LightModel2/>
                 <Headache ref={modelRef} />
