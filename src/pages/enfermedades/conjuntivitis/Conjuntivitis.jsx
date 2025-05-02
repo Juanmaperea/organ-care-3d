@@ -4,12 +4,15 @@ import Eye from './models-3d/Eye';
 import Light from './lights/Lights';
 import Headache from './models-3d/Headache';
 import LightModel2 from './lights/LightsModel2';
+import Controls from "./controls/Controls";
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
+import { useRef } from 'react';
 
-function Conjuntivitis() {
+export default function Conjuntivitis() {
+  const modelRef = useRef();
     return (
       <div className="conjuntivitis-container">
         <h1 className="enfermedad-title">CONJUNTIVITIS</h1>
@@ -67,16 +70,16 @@ function Conjuntivitis() {
               Los síntomas de la conjuntivitis incluyen enrojecimiento ocular, picazón, lagrimeo, 
               sensación de cuerpo extraño, párpados pegajosos y secreción (clara en casos virales, 
               espesa en bacterianos, y acompañada de picor intenso en los alérgicos), y en algunos 
-              casos puede presentarse dolor de cabeza leve asociado al malestar ocular.
+              casos puede presentarse dolor de cabeza asociado al malestar ocular.
               </p>
             </div>
 
-            <div className="sintoma-card-conjunti">
+            <div className="sintoma-card-conjunti" style={{ position: 'relative', height: '400px' }}>
               <h3 className="sintoma-subtitle-conjunti">DOLOR DE CABEZA</h3>
               <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
                 <LightModel2/>
-                <OrbitControls />
-                <Headache />
+                <Headache ref={modelRef} />
+                <Controls targetRef={modelRef} />
 
                 {/* Piso de la escena */}
                 <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}> 
@@ -85,6 +88,9 @@ function Conjuntivitis() {
                 </mesh>
 
               </Canvas>
+              <div className="sintoma-nota-conjunti">
+                💡 Haz clic en el modelo para que sude. Usa las teclas ← y → para moverlo.
+              </div>
             </div>
 
           </div>
@@ -94,4 +100,4 @@ function Conjuntivitis() {
     );
   }
   
-  export default Conjuntivitis;
+  //export default Conjuntivitis;
