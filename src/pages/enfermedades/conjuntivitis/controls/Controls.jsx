@@ -1,8 +1,9 @@
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 
-const Controls = ({ targetRef }) => {
+const Controls = ({ targetRef, zoomTargetRef }) => {
   const [tears, setTears] = useState([]);
+  const { camera } = useThree();
 
   // Animación
   useFrame(() => {
@@ -21,7 +22,6 @@ const Controls = ({ targetRef }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!targetRef.current) return;
-
       if (e.key === 'ArrowLeft') targetRef.current.rotation.y -= 0.1;
       if (e.key === 'ArrowRight') targetRef.current.rotation.y += 0.1;
     };
@@ -29,6 +29,29 @@ const Controls = ({ targetRef }) => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [targetRef]);
+
+  // Zoom solo dentro del contenedor
+  useEffect(() => {
+    const handleWheel = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const zoomSpeed = 0.5;
+      camera.position.z += e.deltaY * 0.01 * zoomSpeed;
+      camera.position.z = Math.max(1, Math.min(camera.position.z, 10));
+    };
+
+    const element = zoomTargetRef?.current;
+    if (element) {
+      element.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (element) {
+        element.removeEventListener('wheel', handleWheel);
+      }
+    };
+  }, [camera, zoomTargetRef]);
 
   // Clic para llorar
   const handleClick = () => {

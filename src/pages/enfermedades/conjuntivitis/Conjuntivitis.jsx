@@ -14,6 +14,7 @@ import { useRef } from 'react';
 
 export default function Conjuntivitis() {
   const modelRef = useRef();
+  const zoomContainerRef = useRef();
     return (
       <div className="conjuntivitis-container">
         <h1 className="enfermedad-title">CONJUNTIVITIS</h1>
@@ -75,12 +76,12 @@ export default function Conjuntivitis() {
               </p>
             </div>
 
-            <div className="sintoma-card-conjunti" style={{ position: 'relative', height: '400px' }}>
+            <div className="sintoma-card-conjunti" style={{ position: 'relative', height: '400px' }} ref={zoomContainerRef}>
               <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
                 <Title title={"DOLOR DE CABEZA"} />
                 <LightModel2/>
                 <Headache ref={modelRef} />
-                <Controls targetRef={modelRef} />
+                <Controls targetRef={modelRef} zoomTargetRef={zoomContainerRef}  />
 
                 {/* Piso de la escena */}
                 <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.5, 0]}> 
