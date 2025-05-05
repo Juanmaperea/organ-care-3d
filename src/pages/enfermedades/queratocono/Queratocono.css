@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
+    margin-bottom: 70px;
   }
   
   .enfermedad-title {
@@ -52,8 +53,7 @@
     margin-bottom: 10px;
   }
   
-  
-  
+
 
   .causa-section {
     text-align: center;
@@ -69,75 +69,96 @@
     text-align: center;
   }
 
-  
-
   .sintomas-section {
-    background-color: #00AEEF; /* Azul */
-    position: relative; /* Para posicionar elementos hijos */
-    height: 600px; /* Altura fija, puedes ajustar */
-    padding: 0;
-    overflow: hidden;
+    margin-top: 60px;
+    background-color: #00a3d8; /* celeste */
   }
   
-  .sintomas-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 48px;
-    font-weight: bold;
+  .sintomas-header {
+    background-color: #00a3d8;
+    text-align: center;
+    padding: 20px 10px;
+    height: 70px;
+  }
+
+  
+  .sintomas-header h2 {
+    margin-top: 15px;
     color: white;
-    text-align: center;
-    margin: 0;
-  }
-  
-  .sintomas-container {
-    width: 100%;
-    height: 100%;
-    position: relative; /* Importante para los hijos posicionados */
-  }
-  
-  .sintoma-card {
-    position: absolute;
-    width: 250px; /* o lo que necesites */
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .sintoma-card:first-child {
-    top: 30px;
-    left: 30px;
-  }
-  
-  .sintoma-card:last-child {
-    bottom: 30px;
-    right: 30px;
-  }
-  
-
-  .sintoma-subtitle {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
-    margin-bottom: 15px;
-    color: black;
+   
   }
   
-  .sintoma-text {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 15px;
+  .sintomas-content {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
   }
   
-  .sintoma-image {
-    width: 100%;
+  .sintomas-texto {
+    width: 45%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .sintomas-imagen {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sintomas-imagen img {
+    max-width: 100%;
     height: auto;
-    border-radius: 5px;
   }
   
+  .tratamientos-section {
+    background-color: #00a3d8;
+    padding: 40px 0;
+  }
+  
+  .tratamientos-header {
+    height: 120px;
+    text-align: center;
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: white;
+  }
 
+  .tratamientos-header h2{
+    padding-top: 30px;
+  }
+  
+  .tratamientos-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 5%;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  
+  .tratamientos-imagen img {
+    
+    max-width: 100%;
+    width: 300px;
+    border-radius: 8px;
+  }
+  
+  .tratamientos-texto {
+    max-width: 400px;
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
   
   /* Media queries para responsividad */
   @media (max-width: 768px) {
@@ -155,8 +176,22 @@
       padding: 0 5%;
     }
 
-    .sintomas-container {
+    .sintomas-content {
+      gap: 20px;
+      padding: 30px 10%;
+    }
+  
+    .sintomas-texto, .sintomas-imagen {
+      width: 100%;
+    }
+
+    .tratamientos-content {
       flex-direction: column;
-      align-items: center;
+      text-align: center;
+    }
+  
+    .tratamientos-texto,
+    .tratamientos-imagen img {
+      width: 90%;
     }
   }
