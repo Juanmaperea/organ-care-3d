@@ -1,14 +1,18 @@
 import React from "react";
 import "./Queratocono.css";
-import Eye from "../../home/models-3d/queratocono/Eye";
-import Light from "../../home/lights/queratocono/Lights";
-
+import Eye from "./models-3d/Eye";
+import Light from "./lights/LightsEye";
+import LightsAnnoyingLight from "./lights/LightsAnnoyingLight";
+import AnnoyingLight from "./models-3d/AnnoyingLight";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import ojoImage from "../../../assets/eye.jpg";
 import sintomaImg1 from "../../../assets/sintoma_queratocono_img1.png";
 import sintomaImg2 from "../../../assets/sintoma_queratocono_img2.jpg";
-import tratamiento from "../../../assets/tratamiento_icono.png"
+import tratamiento from "../../../assets/tratamiento_icono.png";
+import Title from "./texts/Title";
+import Staging from "./staging/Staging";
+
 function Queratocono() {
   return (
     <div className="queratocono-container">
@@ -69,36 +73,55 @@ function Queratocono() {
       </div>
 
       {/*SECCIÓN: SÍNTOMAS */}
-
-      <div className="sintomas-section">
-        <div className="sintomas-header">
-          <h2>SÍNTOMAS</h2>
+      <div className="sintomas-section-kerato">
+        <div className="sintomas-header-kerato">
+          <h2 className="sintomas-title-kerato">SÍNTOMAS</h2>
         </div>
-
-        <div className="sintomas-content">
-          <div className="sintomas-texto">
-            <p>
-              El queratocono puede causar visión borrosa progresiva, visión
-              distorsionada y aumento de la sensibilidad a la luz.
+        <div className="sintomas-container-kerato">
+          <div className="sintoma-card-kerato">
+            <p className="sintoma-text-kerato">
+              El síntoma más frecuente del queratocono es la sensibilidad a la
+              luz (fotofobia), acompañada de visión borrosa o distorsionada,
+              aumento progresivo de la miopía o astigmatismo, dificultad para
+              ver de noche, necesidad constante de cambiar la graduación de
+              lentes y presencia de halos o deslumbramientos alrededor de las
+              luces
             </p>
           </div>
-          <div className="sintomas-imagen">
-            <img src={sintomaImg1} alt="Ojo con miopía" width={"300px"} />
-          </div>
-        </div>
-        <div className="sintomas-content">
-          <div className="sintomas-texto">
-            <p>
-              También se presentan cambios frecuentes en la graduación de los
-              lentes y dificultad para ver de noche.
-            </p>
-          </div>
-          <div className="sintomas-imagen">
-            <img src={sintomaImg2} alt="Ojo con miopía" width={"250px"} />
-          </div>
-        </div>
 
+          <div className="sintoma-card-kerato">
+            <h3
+              className="sintoma-subtitle-kerato"
+              style={{ color: "#003f54" }}
+            >
+              SENSIBILIDAD A LA LUZ
+            </h3>
+            <Canvas
+              shadows
+              camera={{ position: [2, 2, 5], fov: 50 }}
+              style={{ background: "#FFFFFF" }}
+            >
+              <LightsAnnoyingLight />
+              <OrbitControls />
+              <AnnoyingLight />
+              <Staging />
+              {/* <Floor2 /> */}
+              <Title title={"AAAY mis ojos!!!"} />
+
+              {/* Piso de la escena */}
+              <mesh
+                receiveShadow
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={[0, -3.5, 0]}
+              >
+                <planeGeometry args={[20, 20]} />
+                <meshStandardMaterial color="cyan" />
+              </mesh>
+            </Canvas>
+          </div>
+        </div>
       </div>
+      <div className="sintomas-footer-kerato"></div>
 
       {/* SECCIÓN: TRATAMIENTOS */}
       <div className="tratamientos-section">
@@ -108,8 +131,7 @@ function Queratocono() {
 
         <div className="tratamientos-content">
           <div className="tratamientos-imagen">
-          <img src={tratamiento} alt="tratamiento" width={"150px"} />
-
+            <img src={tratamiento} alt="tratamiento" width={"150px"} />
           </div>
           <div className="tratamientos-texto">
             <p>
