@@ -69,55 +69,78 @@
     text-align: center;
   }
 
-  .sintomas-section {
-    margin-top: 60px;
-    background-color: #00a3d8; /* celeste */
+.sintomas-section-kerato {
+    position: relative; /* Para posicionar elementos hijos */
+    background-color: #f8f9fa; /* blanco */
   }
   
-  .sintomas-header {
-    background-color: #00a3d8;
+  .sintomas-title-kerato {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    margin: 0;
+  }
+  
+  .sintomas-container-kerato {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .sintoma-card-kerato {
+    border-radius: 10px;
+    padding: 20px;
     text-align: center;
-    padding: 20px 10px;
-    height: 70px;
+    flex: 1 1 300px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .sintoma-card-kerato:first-child {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+  }
+  
+  .sintoma-card-kerato:last-child {
+    overflow: hidden;
+    height: 400px;
+    padding: 0px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sintoma-text-kerato {
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .sintomas-header-kerato {
+    background-color: #00aeea; /* azul */
+    padding: 40px 0;
   }
 
   
-  .sintomas-header h2 {
-    margin-top: 15px;
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
-   
+  .sintoma-nota-kerato {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(224, 224, 224, 0.95);
+    color: #333;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    z-index: 10;
   }
-  
-  .sintomas-content {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-  }
-  
-  .sintomas-texto {
-    width: 45%;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  .sintomas-imagen {
-    width: 45%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .sintomas-imagen img {
-    max-width: 100%;
-    height: auto;
-  }
-  
+
   .tratamientos-section {
-    background-color: #00a3d8;
+    background-color: #00aeea;
     padding: 40px 0;
   }
   
@@ -194,4 +217,6 @@
     .tratamientos-imagen img {
       width: 90%;
     }
+
+  
   }

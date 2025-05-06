@@ -6,6 +6,7 @@ const SnellenTest = (props) => {
     const { nodes, materials } = useGLTF(
         "models-3d/glaucoma/snellen-test.glb"
     );
+    
     const eyeRef = useRef();
 
     useFrame(() => {
