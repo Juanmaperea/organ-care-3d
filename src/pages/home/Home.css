@@ -24,22 +24,6 @@
     justify-content: center;
   }
   
-  .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 100px;
-    margin-left: 2.0rem;
-    line-height: 1.1;
-    align-items: center;
-    position: static;
-  }
-  
-  .description {
-    font-size: 1rem;
-    line-height: 1.5;
-    max-width: 900px;
-  }
-  
   .image-section {
     flex: 2;
     display: flex;
@@ -103,15 +87,16 @@
   }
   
   .adventure-button {
-    margin-top: -200px;
+    margin-top: 1rem;
     background-color: #005571;
     color: white;
     border: none;
     border-radius: 50px;
     padding: 1rem 2rem;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    align-self: flex-end; /* <-- Este hace que el botón se alinee a la derecha */
   }
   
   .adventure-button:hover {
@@ -462,3 +447,40 @@
       align-items: center;
     }
   }
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 10rem;
+  flex-wrap: wrap;
+}
+
+.model-container {
+  flex: 1;
+  min-width: 200px;
+  max-width: 500px;
+  height: 700px;
+}
+
+.hero-text-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  color: #005c70;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.hero-description {
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: right;
+    line-height: 1.5;
+}
