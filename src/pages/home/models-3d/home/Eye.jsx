@@ -21,7 +21,7 @@ const Eye = (props) => {
             receiveShadow
             geometry={nodes.high_poly.geometry}
             material={materials.Material_0}
-            scale={5}
+            scale={6}
             />
         </group>
     );

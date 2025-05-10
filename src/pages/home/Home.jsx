@@ -36,41 +36,41 @@ const Home = () => {
   return (
     <div className="home-container">
       {/* Primera sección - Hero */}
-      <h1 className="title">
-        Explora el Ojo Humano:
-        <br />
-        Entiende las Enfermedades del Ojo y Protege tu Visión
-      </h1>
-      <div className="content-wrapper">
-        <div className="text-section">
-          <p className="description">
+      <div className="hero-section">
+        {/* Modelo 3D a la izquierda */}
+        <div className="model-container">
+          <Canvas
+            shadows
+            camera={{ position: [2, 2, 5], fov: 50 }}
+            style={{ background: '#FFFFFF', borderRadius: '20px' }}
+          >
+            <Light />
+            <OrbitControls enableZoom={false} />
+            <Eye />
+          </Canvas>
+        </div>
+
+        {/* Texto a la derecha */}
+        <div className="hero-text-content">
+          <h1 className="hero-title">
+            Explora el Ojo Humano: <br />
+            Entiende las Enfermedades del Ojo y Protege tu Visión
+          </h1>
+          <p className="hero-description">
             Bienvenido a una experiencia inmersiva que te llevará al interior del ojo humano. 
-            A través de modelos 3D interactivos, podrás aprender sobre las enfermedades 
-            que afectan la visión, sus síntomas, tratamientos y cómo prevenirlas. 
+            A través de modelos 3D interactivos, podrás aprender sobre las enfermedades que afectan 
+            la visión, sus síntomas, tratamientos y cómo prevenirlas. 
             ¡Descubre todo lo que puedes hacer para mantener tus ojos sanos y proteger tu vista!
           </p>
+          <button
+            className="adventure-button"
+            onClick={() => {
+              document.getElementById("diseases-section")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            ¡Comienza tu aventura aquí!
+          </button>
         </div>
-
-        <div className="image-section">
-          <div className="image-container">
-            <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
-              <Light/>
-              <OrbitControls />
-              <Eye />
-            </Canvas>
-          </div>
-        </div>
-      </div>
-
-      <div className="button-container">
-        <button
-        className="adventure-button"
-        onClick={() => {
-          document.getElementById("diseases-section")?.scrollIntoView({ behavior: "smooth" });
-        }}
-        >
-          ¡Comienza tu aventura aquí!
-        </button>
       </div>
 
       {/* Segunda sección - Enfermedades */}
