@@ -1,15 +1,25 @@
 import React from 'react';
+import { useRef } from 'react';
 import './Glaucoma.css';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+
 import Eye from './models-3d/Eye';
-import Light from './lights/Lights2';
+import Light from './lights/Lights';
 import Floor from "./textures/Floor";
+
 import SnellenTest from './models-3d/SnellenTest';
 import Light2 from './lights/Lights2';
 import Floor2 from "./textures/Floor2";
+import Controls from "./controls/Controls"
+import { Sky, Cloud } from '@react-three/drei';
+import AnimatedClouds from './lights/AnimatedClouds';
 
 function Glaucoma() {
+
+  const modelRef = useRef();
+  const zoomContainerRef = useRef();
+
   return (
     <div className="glaucoma-container">
       <h1 className="enfermedad-title">GLAUCOMA</h1>
@@ -72,12 +82,14 @@ function Glaucoma() {
               </p>
             </div>
 
-            <div className="sintoma-card-glaucoma">
+            <div className="sintoma-card-glaucoma" style={{ position: 'relative', height: '400px' }} ref={zoomContainerRef} >
               <h3 className="sintoma-subtitle-glaucoma">VISIÓN BORROSA DE TUNEL</h3>
               <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
+                <Sky sunPosition={[100, 20, 100]} />
                 <Light2/>
                 <OrbitControls />
-                <SnellenTest />
+                <SnellenTest ref={modelRef} />
+                <Controls targetRef={modelRef} zoomTargetRef={zoomContainerRef}  />
                 <Floor2 />
               </Canvas>
             </div>

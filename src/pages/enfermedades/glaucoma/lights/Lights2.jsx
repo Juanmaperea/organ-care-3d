@@ -1,57 +1,40 @@
+import { useRef, useEffect } from "react";
+import { SpotLightHelper, Object3D } from "three";
 import { useHelper } from "@react-three/drei";
-import { useRef } from "react";
-import {
-  DirectionalLightHelper,
-} from "three";
 
-const Lights = () => {
-  const directionalLightRef = useRef();
-  useHelper(directionalLightRef, DirectionalLightHelper);
+const Lights2 = () => {
+  const spotLightRef = useRef();
+  const targetRef = useRef();
+
+  useHelper(spotLightRef, SpotLightHelper, 'red');
+
+  useEffect(() => {
+    if (spotLightRef.current && targetRef.current) {
+      spotLightRef.current.target = targetRef.current;
+    }
+  }, []);
 
   return (
     <>
-      <ambientLight color={"#F5F5DC"} intensity={10} />
-      <directionalLight
-        //ref={directionalLightRef}
+      {/* Luz de ambiente para visibilidad general */}
+      <ambientLight intensity={0.5} />
+
+      <spotLight
+        //ref={spotLightRef}
         color="white"
-        intensity={10}
-        position={[5, 10, 5]}
+        intensity={150}
+        angle={Math.PI / 6}
+        penumbra={0.3}
+        distance={15}
+        position={[0, 2, 5]}
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
-        shadow-camera-top={10}
-        shadow-camera-bottom={-10}
-        shadow-camera-near={1}
-        shadow-camera-far={30}
         />
-      <directionalLight
-        //ref={directionalLightRef}
-        color="white"
-        intensity={2}
-        position={[-5, -10, -5]}
-      />
-      <directionalLight
-        //ref={directionalLightRef}
-        color="white"
-        intensity={3}
-        position={[0, 10, 0]}
-      />
-      <directionalLight
-        //ref={directionalLightRef}
-        color="white"
-        intensity={3}
-        position={[10, 0, 0]}
-      />
-      <directionalLight
-        //ref={directionalLightRef}
-        color="white"
-        intensity={3}
-        position={[0, 0, 10]}
-      />
+        <object3D ref={targetRef} position={[0, 0.5, 0]} />
+
     </>
   );
 };
 
-export default Lights;
+export default Lights2;
