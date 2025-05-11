@@ -20,7 +20,7 @@ const AnimatedClouds = () => {
       position={[-10, 5, -10]} // posición inicial fuera del campo
       scale={5}
       opacity={0.2}
-      speed={0.2} // animación interna suave
+      speed={2} // animación interna suave
     />
   );
 };

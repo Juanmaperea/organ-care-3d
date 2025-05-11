@@ -7,6 +7,7 @@ import LightModel2 from './lights/LightsModel2';
 import AnimatedClouds from './lights/AnimationLights/AnimatedClouds';
 import Controls from "./controls/Controls";
 import Title from "./texts/Title";
+import TitleAuxModel2 from "./texts/TitleAuxModel2";
 
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
@@ -99,7 +100,9 @@ export default function Conjuntivitis() {
 
               </Canvas>
               <div className="sintoma-nota-conjunti">
-                💡 Haz clic en el modelo para que sude. Usa las teclas ← y → para moverlo.
+                <Canvas>
+                  <TitleAuxModel2 title={"💡 Haz clic en el modelo para interactuar. Usa las teclas ← y → para moverlo."} />
+                </Canvas>
               </div>
             </div>
 
