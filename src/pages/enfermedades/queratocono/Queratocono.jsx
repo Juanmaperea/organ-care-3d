@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "./Queratocono.css";
 import Eye from "./models-3d/Eye";
 import Light from "./lights/LightsEye";
@@ -6,14 +6,21 @@ import LightsAnnoyingLight from "./lights/LightsAnnoyingLight";
 import AnnoyingLight from "./models-3d/AnnoyingLight";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import ojoImage from "../../../assets/eye.jpg";
-import sintomaImg1 from "../../../assets/sintoma_queratocono_img1.png";
-import sintomaImg2 from "../../../assets/sintoma_queratocono_img2.jpg";
 import tratamiento from "../../../assets/tratamiento_icono.png";
 import Title from "./texts/Title";
 import Staging from "./staging/Staging";
 
 function Queratocono() {
+  const [showTitle, setShowTitle] = useState(false);
+  const lightRef = useRef();
+
+  const handleClick = () => {
+    setShowTitle(true);
+    setTimeout(() => {
+      setShowTitle(false);
+    }, 8000); // Ocultar el título después de 10 segundos
+  };
+
   return (
     <div className="queratocono-container">
       <h1 className="enfermedad-title">QUERATOCONO</h1>
@@ -103,10 +110,10 @@ function Queratocono() {
             >
               <LightsAnnoyingLight />
               <OrbitControls />
-              <AnnoyingLight />
               <Staging />
-              {/* <Floor2 /> */}
-              <Title title={"AAAY mis ojos!!!"} />
+
+              {showTitle && <Title title={"AAAY mis ojos!!!"} />}
+              <AnnoyingLight ref={lightRef} onClick={handleClick} />
 
               {/* Piso de la escena */}
               <mesh
@@ -118,7 +125,12 @@ function Queratocono() {
                 <meshStandardMaterial color="cyan" />
               </mesh>
             </Canvas>
+
+            <div className="sintoma-nota-kerato">
+              💡 Haz clic en el modelo para que reaccione a la luz
+            </div>
           </div>
+
         </div>
       </div>
       <div className="sintomas-footer-kerato"></div>
@@ -130,11 +142,15 @@ function Queratocono() {
         </div>
 
         <div className="tratamientos-content">
+          <div className="sintoma-card-kerato">
           <div className="tratamientos-imagen">
             <img src={tratamiento} alt="tratamiento" width={"150px"} />
           </div>
-          <div className="tratamientos-texto">
-            <p>
+          </div>
+          <div className="sintoma-card-kerato">
+            <p className="sintoma-text-kerato">
+          {/* <div className="tratamientos-texto"> */}
+            
               Lorem ipsum dolor sit amet consectetur. Ornare odio lorem laoreet
               adipiscing vel. Urna sit diam nisl nulla sit sit adipiscing. Enim
               et viverra aenean pellentesque lacus ut tortor.

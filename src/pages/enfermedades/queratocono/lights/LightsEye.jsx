@@ -16,7 +16,7 @@ const Lights = () => {
         //ref={directionalLightRef}
         color="white"
         intensity={4}
-        position={[5, 10, 5]}
+        position={[5, 1, 5]}
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}

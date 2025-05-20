@@ -33,6 +33,24 @@ const LightsAnnoyingLight = () => {
         />
         <object3D ref={targetRef} position={[0, 0.5, 0]} />
 
+        <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={3}
+        position={[20, 0, 0]}
+      />
+      <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={2}
+        position={[-50, -10, -5]}
+      />  
+      <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={3}
+        position={[-10, 0, 10]}
+      />
     </>
   );
 };

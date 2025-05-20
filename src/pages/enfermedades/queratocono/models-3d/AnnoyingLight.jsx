@@ -7,6 +7,7 @@ const AnnoyingLight = forwardRef((props, ref) => {
     "models-3d/queratocono/annoying-light.glb"
   );
   const modelRef = useRef();
+  const { onClick } = props;
 
   useFrame(() => {
     if (modelRef.current) {
@@ -27,6 +28,7 @@ const AnnoyingLight = forwardRef((props, ref) => {
         receiveShadow
         geometry={nodes.AnnoyingLight.geometry}
         material={materials.AnnoyingLightMaterial}
+        onClick={onClick}
       />
     </group>
   );

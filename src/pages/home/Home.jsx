@@ -53,14 +53,11 @@ const Home = () => {
         {/* Texto a la derecha */}
         <div className="hero-text-content">
           <h1 className="hero-title">
-            Explora el Ojo Humano: <br />
-            Entiende las Enfermedades del Ojo y Protege tu Visión
+            Explora el Ojo Humano
+            
           </h1>
           <p className="hero-description">
-            Bienvenido a una experiencia inmersiva que te llevará al interior del ojo humano. 
-            A través de modelos 3D interactivos, podrás aprender sobre las enfermedades que afectan 
-            la visión, sus síntomas, tratamientos y cómo prevenirlas. 
-            ¡Descubre todo lo que puedes hacer para mantener tus ojos sanos y proteger tu vista!
+            Entiende las Enfermedades del Ojo y Protege tu Visión
           </p>
           <button
             className="adventure-button"
