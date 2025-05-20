@@ -1,25 +1,21 @@
-import React, { useRef, useState } from "react";
 import "./Queratocono.css";
 import Eye from "./models-3d/Eye";
 import Light from "./lights/LightsEye";
-import LightsAnnoyingLight from "./lights/LightsAnnoyingLight";
 import AnnoyingLight from "./models-3d/AnnoyingLight";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import LightsAnnoyingLight from "./lights/LightsAnnoyingLight";
 import tratamiento from "../../../assets/tratamiento_icono.png";
 import Title from "./texts/Title";
 import Staging from "./staging/Staging";
+import Controls from "./controls/Controls";
+import { useRef, useState } from "react";
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 
-function Queratocono() {
+export default function Queratocono() {
   const [showTitle, setShowTitle] = useState(false);
   const lightRef = useRef();
-
-  const handleClick = () => {
-    setShowTitle(true);
-    setTimeout(() => {
-      setShowTitle(false);
-    }, 8000); // Ocultar el título después de 10 segundos
-  };
+    const modelRef = useRef();
+    const zoomContainerRef = useRef();
 
   return (
     <div className="queratocono-container">
@@ -96,41 +92,26 @@ function Queratocono() {
             </p>
           </div>
 
-          <div className="sintoma-card-kerato">
-            <h3
-              className="sintoma-subtitle-kerato"
-              style={{ color: "#003f54" }}
-            >
+          <div className="sintoma-card-kerato" >
+            <h2 className="sintoma-subtitle-kerato" style={{ color: "#003f54" }}>
               SENSIBILIDAD A LA LUZ
-            </h3>
-            <Canvas
-              shadows
-              camera={{ position: [2, 2, 5], fov: 50 }}
-              style={{ background: "#FFFFFF" }}
-            >
+            </h2>
+            <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: "#FFFFFF" }}>
               <LightsAnnoyingLight />
               <OrbitControls />
               <Staging />
-
-              {showTitle && <Title title={"AAAY mis ojos!!!"} />}
-              <AnnoyingLight ref={lightRef} onClick={handleClick} />
-
+              <Controls targetRef={modelRef} zoomTargetRef={zoomContainerRef}  />
+              
               {/* Piso de la escena */}
-              <mesh
-                receiveShadow
-                rotation={[-Math.PI / 2, 0, 0]}
-                position={[0, -3.5, 0]}
-              >
+              <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.5, 0]}>
                 <planeGeometry args={[20, 20]} />
                 <meshStandardMaterial color="cyan" />
               </mesh>
             </Canvas>
-
             <div className="sintoma-nota-kerato">
-              💡 Haz clic en el modelo para que reaccione a la luz
+              💡 Haz clic en el modelo para que reaccione a la luz  y giralo con ← y → 
             </div>
           </div>
-
         </div>
       </div>
       <div className="sintomas-footer-kerato"></div>
@@ -162,4 +143,4 @@ function Queratocono() {
   );
 }
 
-export default Queratocono;
+//export default Queratocono;
