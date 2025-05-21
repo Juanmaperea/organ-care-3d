@@ -6,7 +6,6 @@ const Eye = (props) => {
     const { nodes, materials } = useGLTF("models-3d/queratocono/keratoconus-eye.glb");
     const eyeRef = useRef();
 
-
     useFrame(() => {
         if (eyeRef.current) {
             eyeRef.current.rotation.y += 0.006;  // Rotacion

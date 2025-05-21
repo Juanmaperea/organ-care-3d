@@ -9,7 +9,7 @@ const AnnoyingLight = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => modelRef.current);
 
   return (
-    <group {...props} ref={modelRef} dispose={null} scale={1.0} position={[-0.6, -0.1, 0]}>
+    <group {...props} ref={modelRef} dispose={null} scale={1} position={[-0.6, -0.1, 0]}>
       <mesh
         castShadow
         receiveShadow

@@ -1,10 +1,20 @@
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import Title from "../texts/Title";
 import AnnoyingLight from "../models-3d/AnnoyingLight";
+import { TextureLoader } from "three";
 
-const Controls = ({ targetRef, zoomTargetRef }) => {
+const Controls = ({ targetRef }) => {
+  const { scene } = useThree();
   const [showTitle, setShowTitle] = useState(false);
+
+  // Fondo inicial
+  useEffect(() => {
+    const loader = new TextureLoader();
+    loader.load("/background/luz.jpg", (texture) => {
+      scene.background = texture;
+    });
+  }, [scene]);
 
   // Animación
   useFrame(() => {
