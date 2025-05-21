@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { SpotLightHelper, Object3D } from "three";
 import { useHelper } from "@react-three/drei";
 
-const LightsAnnoyingLight = () => {
+const LightsGlasses = () => {
   const spotLightRef = useRef();
   const targetRef = useRef();
 
@@ -22,11 +22,11 @@ const LightsAnnoyingLight = () => {
       <spotLight
         //ref={spotLightRef}
         color="white"
-        intensity={170}
+        intensity={200}
         angle={Math.PI / 6}
         penumbra={0.3}
         distance={15}
-        position={[0, 2, 5]}
+        position={[1, 3, 5]}
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -55,4 +55,4 @@ const LightsAnnoyingLight = () => {
   );
 };
 
-export default LightsAnnoyingLight;
+export default LightsGlasses;

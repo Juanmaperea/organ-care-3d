@@ -1,12 +1,7 @@
-import {
-    Cloud,
-    // Environment,
-    Sky,
-    Sparkles,
-    Stars,
-  } from "@react-three/drei";
-  import { Color } from "three";
+import { Cloud, Sky, Sparkles, Stars } from "@react-three/drei";
+import { Color } from "three";
   
+  // Environment,
   const Staging = () => {
     return (
       <>
@@ -29,7 +24,6 @@ import {
           scale={[10, 10, 10]} // The space the particles occupy (default: 1)
           noise={1} // Movement factor (default: 1)
         />
-
       </>
     );
   };

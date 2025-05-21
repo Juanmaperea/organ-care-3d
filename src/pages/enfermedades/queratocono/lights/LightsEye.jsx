@@ -1,32 +1,56 @@
+import { useRef, useEffect } from "react";
+import { SpotLightHelper, Object3D } from "three";
 import { useHelper } from "@react-three/drei";
-import { useRef } from "react";
-import {
-  DirectionalLightHelper,
-} from "three";
 
 const Lights = () => {
-  const directionalLightRef = useRef();
-  useHelper(directionalLightRef, DirectionalLightHelper);
+  const spotLightRef = useRef();
+  const targetRef = useRef();
+
+  useHelper(spotLightRef, SpotLightHelper, 'red');
+
+  useEffect(() => {
+    if (spotLightRef.current && targetRef.current) {
+      spotLightRef.current.target = targetRef.current;
+    }
+  }, []);
 
   return (
     <>
-       {/* Luces*/}
-      <ambientLight color={"#F5F5DC"} intensity={3.5} /> 
-      <directionalLight
-        //ref={directionalLightRef}
+      {/* Luz de ambiente para visibilidad general */}
+      <ambientLight intensity={1} />
+
+      <spotLight
+        //ref={spotLightRef}
         color="white"
-        intensity={4}
-        position={[5, 1, 5]}
+        intensity={150}
+        angle={Math.PI / 6}
+        penumbra={0.3}
+        distance={15}
+        position={[0, 2, 5]}
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
-        shadow-camera-top={10}
-        shadow-camera-bottom={-10}
-        shadow-camera-near={1}
-        shadow-camera-far={30}
         />
+        <object3D ref={targetRef} position={[0, 0.5, 0]} />
+
+        <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={3}
+        position={[20, 0, 0]}
+      />
+      <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={2}
+        position={[-50, -10, -5]}
+      />  
+      <directionalLight
+        //ref={directionalLightRef}
+        color="white"
+        intensity={3}
+        position={[-10, 0, 10]}
+      />
     </>
   );
 };

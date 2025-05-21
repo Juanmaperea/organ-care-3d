@@ -1,21 +1,29 @@
 import "./Queratocono.css";
 import Eye from "./models-3d/Eye";
-import Light from "./lights/LightsEye";
 import AnnoyingLight from "./models-3d/AnnoyingLight";
+import Glasses from "./models-3d/Glasses";
+import Light from "./lights/LightsEye";
 import LightsAnnoyingLight from "./lights/LightsAnnoyingLight";
+import LightsGlasses from "./lights/LightsGlasses";
 import tratamiento from "../../../assets/tratamiento_icono.png";
 import Title from "./texts/Title";
-import Staging from "./staging/Staging";
-import Controls from "./controls/Controls";
+import Staging from "./staging/StagingAnnoyingLight";
+import StagingGlasses from "./staging/StagingGlasses";
+import Controls from "./controls/ControlsAnnoyingLight";
 import { useRef, useState } from "react";
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import Background from "./background/BackgroundGlasses";
+import ControlsGlasses from "./controls/ControlsGlasses";
+
+
 
 export default function Queratocono() {
   const [showTitle, setShowTitle] = useState(false);
   const lightRef = useRef();
-    const modelRef = useRef();
-    const zoomContainerRef = useRef();
+  const modelRef = useRef();
+  const zoomContainerRef = useRef();
+  const glassesRef = useRef();
 
   return (
     <div className="queratocono-container">
@@ -80,6 +88,7 @@ export default function Queratocono() {
         <div className="sintomas-header-kerato">
           <h2 className="sintomas-title-kerato">SÍNTOMAS</h2>
         </div>
+
         <div className="sintomas-container-kerato">
           <div className="sintoma-card-kerato">
             <p className="sintoma-text-kerato">
@@ -92,24 +101,34 @@ export default function Queratocono() {
             </p>
           </div>
 
-          <div className="sintoma-card-kerato" >
-            <h2 className="sintoma-subtitle-kerato" style={{ color: "#003f54" }}>
+          <div className="sintoma-card-kerato">
+            <h2
+              className="sintoma-subtitle-kerato"
+              style={{ color: "#003f54" }}
+            >
               SENSIBILIDAD A LA LUZ
             </h2>
-            <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: "#FFFFFF" }}>
+            <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: "#FFFFFF" }}
+            >
               <LightsAnnoyingLight />
               <OrbitControls />
               <Staging />
-              <Controls targetRef={modelRef} zoomTargetRef={zoomContainerRef}  />
-              
+              <Controls targetRef={modelRef} zoomTargetRef={zoomContainerRef} />
+
               {/* Piso de la escena */}
-              <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.5, 0]}>
+              <mesh
+                receiveShadow
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={[0, -3.5, 0]}
+              >
                 <planeGeometry args={[20, 20]} />
                 <meshStandardMaterial color="cyan" />
               </mesh>
+
             </Canvas>
             <div className="sintoma-nota-kerato">
-              💡 Haz clic en el modelo para que reaccione a la luz  y giralo con ← y → 
+              💡 Haz clic en el modelo para que reaccione a la luz y giralo con
+              ← y →
             </div>
           </div>
         </div>
@@ -119,23 +138,53 @@ export default function Queratocono() {
       {/* SECCIÓN: TRATAMIENTOS */}
       <div className="tratamientos-section">
         <div className="tratamientos-header">
-          <h2>TRATAMIENTOS</h2>
+          {" "}
+          <h2>TRATAMIENTOS</h2>{" "}
         </div>
 
         <div className="tratamientos-content">
           <div className="sintoma-card-kerato">
-          <div className="tratamientos-imagen">
-            <img src={tratamiento} alt="tratamiento" width={"150px"} />
-          </div>
-          </div>
-          <div className="sintoma-card-kerato">
             <p className="sintoma-text-kerato">
-          {/* <div className="tratamientos-texto"> */}
-            
-              Lorem ipsum dolor sit amet consectetur. Ornare odio lorem laoreet
-              adipiscing vel. Urna sit diam nisl nulla sit sit adipiscing. Enim
-              et viverra aenean pellentesque lacus ut tortor.
+              En etapas tempranas, la visión puede corregirse con lentes de
+              contacto o gafas. En casos más avanzados, se pueden utilizar
+              lentes de contacto especiales, anillos intraestromales,
+              reticulación del colágeno corneal (CXL), o un trasplante de
+              córnea.
             </p>
+          </div>
+
+          <div className="sintoma-card-kerato">
+            <h2
+              className="sintoma-subtitle-kerato"
+              style={{ color: "#003f54" }}
+            >
+              GAFAS CORRECTIVAS
+            </h2>
+            <Canvas
+              shadows
+              camera={{ position: [2, 2, 5], fov: 50 }}
+              style={{ background: "#FFFFFF" }}
+            >
+              <LightsGlasses />
+              <OrbitControls />
+              <StagingGlasses />
+              <ControlsGlasses targetRef={glassesRef} />
+
+              {/* Piso de la escena */}
+              <mesh
+                receiveShadow
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={[0, -3.5, 0]}
+              >
+                <planeGeometry args={[20, 20]} />
+                <meshStandardMaterial color="cyan" />
+              </mesh>
+
+            </Canvas>
+            <div className="sintoma-nota-kerato">
+              💡 Haz clic en el modelo para que reaccione a la luz y giralo con
+              ← y →
+            </div>
           </div>
         </div>
       </div>
