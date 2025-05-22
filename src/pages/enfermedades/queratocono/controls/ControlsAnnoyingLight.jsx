@@ -38,7 +38,7 @@ const Controls = ({ targetRef }) => {
   // Clic en modelo
   const handleClick = () => {
     setShowTitle(true);
-    setTimeout(() => setShowTitle(false), 8000);
+    setTimeout(() => setShowTitle(false), 5000);
   };
 
   return (
