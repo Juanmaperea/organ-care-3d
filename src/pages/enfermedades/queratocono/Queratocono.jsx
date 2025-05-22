@@ -2,21 +2,24 @@ import "./Queratocono.css";
 import Eye from "./models-3d/Eye";
 import AnnoyingLight from "./models-3d/AnnoyingLight";
 import Glasses from "./models-3d/Glasses";
+import Ophthalmoscope from "./models-3d/Ophthalmoscope";
 import Light from "./lights/LightsEye";
 import LightsAnnoyingLight from "./lights/LightsAnnoyingLight";
 import LightsGlasses from "./lights/LightsGlasses";
+import LightsOphthalmoscope from "./lights/LightsOphthalmoscope";
 import tratamiento from "../../../assets/tratamiento_icono.png";
 import Title from "./texts/Title";
 import Staging from "./staging/StagingAnnoyingLight";
 import StagingGlasses from "./staging/StagingGlasses";
+import StagingOphthalmoscope from "./staging/StagingOphthalmoscope";
 import Controls from "./controls/ControlsAnnoyingLight";
+import ControlsGlasses from "./controls/ControlsGlasses";
+import ControlsOphthalmoscope from "./controls/ControlsOphthalmoscope";
 import { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Background from "./background/BackgroundGlasses";
-import ControlsGlasses from "./controls/ControlsGlasses";
-
-
+import PreventionVideo from "./videos/PreventionVideo";
 
 export default function Queratocono() {
   const [showTitle, setShowTitle] = useState(false);
@@ -24,6 +27,7 @@ export default function Queratocono() {
   const modelRef = useRef();
   const zoomContainerRef = useRef();
   const glassesRef = useRef();
+  const ophthalmoscopeRef = useRef();
 
   return (
     <div className="queratocono-container">
@@ -108,7 +112,10 @@ export default function Queratocono() {
             >
               SENSIBILIDAD A LA LUZ
             </h2>
-            <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: "#FFFFFF" }}
+            <Canvas
+              shadows
+              camera={{ position: [2, 2, 5], fov: 50 }}
+              style={{ background: "#FFFFFF" }}
             >
               <LightsAnnoyingLight />
               <OrbitControls />
@@ -124,7 +131,6 @@ export default function Queratocono() {
                 <planeGeometry args={[20, 20]} />
                 <meshStandardMaterial color="cyan" />
               </mesh>
-
             </Canvas>
             <div className="sintoma-nota-kerato">
               💡 Haz clic en el modelo para que reaccione a la luz y giralo con
@@ -138,11 +144,10 @@ export default function Queratocono() {
       {/* SECCIÓN: TRATAMIENTOS */}
       <div className="tratamientos-section">
         <div className="tratamientos-header">
-          {" "}
-          <h2>TRATAMIENTOS</h2>{" "}
+          <h2>TRATAMIENTOS</h2>
         </div>
 
-        <div className="tratamientos-content">
+        <div className="sintomas-container-kerato">
           <div className="sintoma-card-kerato">
             <p className="sintoma-text-kerato">
               En etapas tempranas, la visión puede corregirse con lentes de
@@ -179,7 +184,6 @@ export default function Queratocono() {
                 <planeGeometry args={[20, 20]} />
                 <meshStandardMaterial color="cyan" />
               </mesh>
-
             </Canvas>
             <div className="sintoma-nota-kerato">
               💡 Haz clic en el modelo para que reaccione a la luz y giralo con
@@ -188,6 +192,61 @@ export default function Queratocono() {
           </div>
         </div>
       </div>
+      <div className="tratamientos-footer-kerato"></div>
+
+      {/*SECCIÓN: PREVENCION */}
+      <br />
+      <div className="sintomas-section-kerato">
+        <div className="sintomas-header-kerato">
+          <h2 className="sintomas-title-kerato">PREVENCIÓN</h2>
+        </div>
+
+        <div className="sintomas-container-kerato">
+          <div className="sintoma-card-kerato">
+            <p className="sintoma-text-kerato">
+              Aunque el queratocono no puede prevenirse directamente, una
+              detección temprana mediante exámenes oftalmológicos regulares es
+              fundamental para evitar su avance. También se recomienda evitar
+              frotarse los ojos con frecuencia, ya que esto puede empeorar la
+              condición.
+            </p>
+          </div>
+
+          <div className="sintoma-card-kerato">
+            <h2
+              className="sintoma-subtitle-kerato"
+              style={{ color: "#003f54" }}
+            >
+              CHEQUEOS MEDICOS
+            </h2>
+            <Canvas
+              shadows
+              camera={{ position: [2, 2, 5], fov: 50 }}
+              style={{ background: "#FFFFFF" }}
+            >
+              <LightsOphthalmoscope />
+              <OrbitControls />
+              <StagingOphthalmoscope />
+              <ControlsOphthalmoscope targetRef={ophthalmoscopeRef} />
+
+              {/* Piso de la escena */}
+              <mesh
+                receiveShadow
+                rotation={[-Math.PI / 2, 0, 5.1]}
+                position={[0, -5.5, 2]}
+              >
+                <planeGeometry args={[20, 20]} />
+                <meshStandardMaterial color="cyan" />
+              </mesh>
+            </Canvas>
+            <div className="sintoma-nota-kerato">
+              💡 Haz clic en el modelo para que reaccione a la luz y giralo con
+              ← y →
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="sintomas-footer-kerato"></div>
     </div>
   );
 }

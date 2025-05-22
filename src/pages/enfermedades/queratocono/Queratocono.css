@@ -139,13 +139,18 @@
     z-index: 10;
   }
 
-  .tratamientos-section {
+  .sintomas-footer-kerato{
     background-color: #00aeea;
-    padding: 40px 0;
+    height: 90px;
+  }
+
+  .tratamientos-section {
+    position: relative; 
+    background-color: #00aeea;
   }
   
   .tratamientos-header {
-    height: 120px;
+    height: 70px;
     text-align: center;
     color: rgb(0, 63, 84);
     font-size: 36px;
@@ -154,7 +159,9 @@
   }
 
   .tratamientos-header h2{
-    padding-top: 30px;
+    margin-top: 30px;
+    padding-top: -30px;
+
   }
   
   .tratamientos-content {
@@ -181,7 +188,10 @@
     line-height: 1.6;
     text-align: center;
   }
-  
+   .tratamientos-footer-kerato{
+    background-color: #ffffff;
+    height: 90px;
+  }
   
   /* Media queries para responsividad */
   @media (max-width: 768px) {
