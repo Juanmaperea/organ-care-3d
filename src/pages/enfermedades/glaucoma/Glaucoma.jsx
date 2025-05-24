@@ -5,15 +5,17 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
 import Eye from './models-3d/Eye';
-import Light from './lights/Lights';
-import Floor from "./textures/Floor";
+import LightEye from './lights/LightsEye';
+import FloorEye from "./floors/FloorEye";
 
 import SnellenTest from './models-3d/SnellenTest';
-import Light2 from './lights/Lights2';
-import Floor2 from "./textures/Floor2";
+import LightTest from './lights/LightsTest';
+import FloorTest from "./floors/FloorTest";
 import Controls from "./controls/Controls"
-import { Sky, Cloud } from '@react-three/drei';
-import AnimatedClouds from './lights/AnimatedClouds';
+import Dust from './staging/Dust';
+import { Environment } from '@react-three/drei';
+import TitleTest from "./texts/TitleSymptoms";
+import InstructionTest from "./texts/InstructionsSymptoms";
 
 function Glaucoma() {
 
@@ -36,10 +38,10 @@ function Glaucoma() {
         
         <div className="image-glaucoma-section">
           <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
-            <Light/>
+            <LightEye/>
             <OrbitControls />
             <Eye />
-            <Floor />
+            <FloorEye />
           </Canvas>
         </div>
         
@@ -74,24 +76,36 @@ function Glaucoma() {
               Cuando alguien tiene glaucoma, al principio no siente nada raro. Pero poco a poco empieza 
               a ver menos por los lados, como si estuviera mirando por un tubo o una pajilla. A veces, si 
               el glaucoma es muy fuerte, pueden doler los ojos, ver luces como arcoíris alrededor de los 
-              focos, o sentir el ojo rojo o pesado. 
-              <br /><br />
-              Pero lo más importante es que muchas veces no se nota 
-              hasta que ya ha avanzado bastante, por eso es bueno que los doctores revisen tus ojos de vez 
-              en cuando, aunque parezca que todo esté bien.
+              focos, o sentir el ojo rojo o pesado. Muchas veces no se nota hasta que ya ha avanzado bastante.
               </p>
             </div>
 
             <div className="sintoma-card-glaucoma" style={{ position: 'relative', height: '400px' }} ref={zoomContainerRef} >
-              <h3 className="sintoma-subtitle-glaucoma">VISIÓN BORROSA DE TUNEL</h3>
               <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
-                <Sky sunPosition={[100, 20, 100]} />
-                <Light2/>
+                <LightTest/>
+                <Environment 
+                  files={[
+                    "px.png",
+                    "nx.png",
+                    "py.png",
+                    "ny.png",
+                    "pz.png",
+                    "nz.png",
+                  ]} 
+                  path="background/glaucoma/symptoms/"
+                  background />
+                <Dust />
                 <OrbitControls />
+                <TitleTest title={"VISION OPACA Y DE TUNEL"}  />
                 <SnellenTest ref={modelRef} />
                 <Controls targetRef={modelRef} zoomTargetRef={zoomContainerRef}  />
-                <Floor2 />
+                <FloorTest />
               </Canvas>
+              <div className="sintoma-nota-conjunti">
+                <Canvas>
+                  <InstructionTest title={"💡 Haz clic en el modelo para interactuar. Usa las teclas ← y → para opacarlo."} />
+                </Canvas>
+              </div>
             </div>
 
           </div>

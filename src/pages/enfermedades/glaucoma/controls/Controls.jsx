@@ -74,15 +74,15 @@ const Controls = ({ targetRef, zoomTargetRef }) => {
       )}
 
       {/* Desenfoque frontal */}
-      <mesh ref={blurOverlayRef} position={[0, 0, 1]}>
-        <planeGeometry args={[8, 8]} />
+      <mesh ref={blurOverlayRef} position={[0, 0, 3.05]}>
+        <planeGeometry args={[100, 100]} />
         <meshBasicMaterial color="black" transparent opacity={0} />
       </mesh>
 
       {/* Visión de túnel circular */}
       {tunnelVision && (
-        <mesh position={[0, 0, 0.95]} rotation={[0, 0, 0]}>
-          <ringGeometry args={[0.5, 8, 64]} />
+        <mesh position={[0, 0, 3]} rotation={[0, 0, 0]}>
+          <ringGeometry args={[0.5, 100, 64]} />
           <meshBasicMaterial color="black" side={THREE.DoubleSide} transparent opacity={0.85} />
         </mesh>
       )}
