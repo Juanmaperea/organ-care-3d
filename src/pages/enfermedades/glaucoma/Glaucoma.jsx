@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import './Glaucoma.css';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { Environment } from '@react-three/drei';
 
 import Eye from './models-3d/Eye';
 import LightEye from './lights/LightsEye';
@@ -11,16 +12,26 @@ import FloorEye from "./floors/FloorEye";
 import SnellenTest from './models-3d/SnellenTest';
 import LightTest from './lights/LightsTest';
 import FloorTest from "./floors/FloorTest";
-import Controls from "./controls/Controls"
-import Dust from './staging/Dust';
-import { Environment } from '@react-three/drei';
-import TitleTest from "./texts/TitleSymptoms";
-import InstructionTest from "./texts/InstructionsSymptoms";
+import ControlTest from "./controls/ControlsTest";
+import StagingTest from './staging/Dust';
+import HTML3DTest from "./texts/HTML3DTest";
+
+import Laser from './models-3d/Laser';
+import LightLaser from './lights/LightsLaser';
+import FloorLaser from './floors/FloorLaser';
+import ControlLaser from './controls/ControlsLaser';
+import StagingLaser from './staging/CleanSpace';
+import HTML3DLaser from "./texts/HTML3DLaser";
+
+import Instructions from "./texts/Instructions";
 
 function Glaucoma() {
 
-  const modelRef = useRef();
-  const zoomContainerRef = useRef();
+  const snellenRef = useRef();
+  const snellenZoomRef = useRef();
+
+  const laserRef = useRef();
+  const laserZoomRef = useRef();
 
   return (
     <div className="glaucoma-container">
@@ -80,37 +91,84 @@ function Glaucoma() {
               </p>
             </div>
 
-            <div className="sintoma-card-glaucoma" style={{ position: 'relative', height: '400px' }} ref={zoomContainerRef} >
+            <div className="sintoma-card-glaucoma" style={{ position: 'relative', height: '400px' }} ref={snellenZoomRef} >
               <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
                 <LightTest/>
                 <Environment 
                   files={[
-                    "px.png",
-                    "nx.png",
-                    "py.png",
-                    "ny.png",
-                    "pz.png",
-                    "nz.png",
+                    "sym_px.png",
+                    "sym_nx.png",
+                    "sym_py.png",
+                    "sym_ny.png",
+                    "sym_pz.png",
+                    "sym_nz.png",
                   ]} 
                   path="background/glaucoma/symptoms/"
                   background />
-                <Dust />
+                <StagingTest />
                 <OrbitControls />
-                <TitleTest title={"VISION OPACA Y DE TUNEL"}  />
-                <SnellenTest ref={modelRef} />
-                <Controls targetRef={modelRef} zoomTargetRef={zoomContainerRef}  />
+                <HTML3DTest title={"VISION OPACA Y DE TUNEL"}  />
+                <SnellenTest ref={snellenRef} />
+                <ControlTest targetRef={snellenRef} zoomTargetRef={snellenZoomRef}  />
                 <FloorTest />
               </Canvas>
-              <div className="sintoma-nota-conjunti">
+              <div className="sintoma-nota-glaucoma">
                 <Canvas>
-                  <InstructionTest title={"💡 Haz clic en el modelo para interactuar. Usa las teclas ← y → para opacarlo."} />
+                  <Instructions title={"💡 Haz clic en el modelo para interactuar. Usa las teclas ← y → para opacarlo."} />
                 </Canvas>
               </div>
             </div>
-
           </div>
         </div>
         <div className="sintomas-footer-glaucoma"></div>
+
+      {/*SECCIÓN: TRATAMIENTOS */}
+      <div className="tratamientos-section-glaucoma">
+          <div className="tratamientos-header-glaucoma">
+            <h2 className="tratamientos-title-glaucoma">TRATAMIENTOS</h2>
+          </div>
+          <div className="tratamientos-container-glaucoma">
+
+            <div className="tratamiento-card-glaucoma">
+              <p className="tratamiento-text-glaucoma">
+              Aunque no se puede curar del todo, el glaucoma se puede tratar con gotas especiales que 
+              ayudan a bajar la presión del ojo, a veces con pastillas, o usando una luz láser que hace 
+              un horificio en el ojo para que la presión salga. Si eso no funciona, el doctor puede 
+              hacer una operación pequeña. Lo más importante es seguir yendo a chequeos médicos para 
+              cuidar bien los ojos.
+              </p>
+            </div>
+
+            <div className="tratamiento-card-glaucoma" style={{ position: 'relative', height: '400px' }} ref={laserZoomRef} >
+              <Canvas shadows camera={{ position: [-2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
+                <LightLaser/>
+                <Environment 
+                  files={[
+                    "treat_px.png",
+                    "treat_nx.png",
+                    "treat_py.png",
+                    "treat_ny.png",
+                    "treat_pz.png",
+                    "treat_nz.png",
+                  ]} 
+                  path="background/glaucoma/treatments/"
+                  background />
+                <StagingLaser />
+                <OrbitControls />
+                <HTML3DLaser title={"CIRUGIA LASER"}  />
+                <Laser ref={laserRef} />
+                <ControlLaser targetRef={laserRef} zoomTargetRef={laserZoomRef}  />
+                <FloorLaser />
+              </Canvas>
+              <div className="tratamiento-nota-glaucoma">
+                <Canvas>
+                  <Instructions title={"💡 Haz doble clic en el modelo para interactuar. Pulsa ℹ️ para ver información."} />
+                </Canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="tratamientos-footer-glaucoma"></div>
 
     </div>
   );

@@ -14,7 +14,7 @@ const Floor = () => {
 
     return (
         <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}>
-          <planeGeometry args={[20, 20]} />
+          <planeGeometry args={[15, 15]} />
           <meshStandardMaterial
             map={floorTexture.map}
             normalMap={floorTexture.normalMap}

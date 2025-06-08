@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { normalMap } from "three/tsl";
 
 const Floor = () => {
-    const PATH = useMemo(() => "/textures/glaucoma/floor/guts_", []);
+    const PATH = useMemo(() => "/textures/glaucoma/floor-laser/cloth_", []);
 
     const floorTexture = useTexture({
         map: PATH + "albedo.png",
@@ -16,7 +16,7 @@ const Floor = () => {
 
     return (
         <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}>
-          <planeGeometry args={[50, 50]} />
+          <planeGeometry args={[10, 10]} />
           <meshStandardMaterial
             map={floorTexture.map}
             normalMap={floorTexture.normalMap}
