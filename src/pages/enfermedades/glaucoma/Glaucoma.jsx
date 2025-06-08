@@ -22,6 +22,8 @@ import FloorLaser from './floors/FloorLaser';
 import ControlLaser from './controls/ControlsLaser';
 import StagingLaser from './staging/CleanSpace';
 import HTML3DLaser from "./texts/HTML3DLaser";
+import Text3DLaser from "./texts/treatments-3D2D/3DTreatment";
+import Text2DLaser from "./texts/treatments-3D2D/2DTreatment";
 
 import Instructions from "./texts/Instructions";
 
@@ -129,16 +131,6 @@ function Glaucoma() {
           </div>
           <div className="tratamientos-container-glaucoma">
 
-            <div className="tratamiento-card-glaucoma">
-              <p className="tratamiento-text-glaucoma">
-              Aunque no se puede curar del todo, el glaucoma se puede tratar con gotas especiales que 
-              ayudan a bajar la presión del ojo, a veces con pastillas, o usando una luz láser que hace 
-              un horificio en el ojo para que la presión salga. Si eso no funciona, el doctor puede 
-              hacer una operación pequeña. Lo más importante es seguir yendo a chequeos médicos para 
-              cuidar bien los ojos.
-              </p>
-            </div>
-
             <div className="tratamiento-card-glaucoma" style={{ position: 'relative', height: '400px' }} ref={laserZoomRef} >
               <Canvas shadows camera={{ position: [-2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
                 <LightLaser/>
@@ -156,6 +148,8 @@ function Glaucoma() {
                 <StagingLaser />
                 <OrbitControls />
                 <HTML3DLaser title={"CIRUGIA LASER"}  />
+                <Text3DLaser />
+                <Text2DLaser />
                 <Laser ref={laserRef} />
                 <ControlLaser targetRef={laserRef} zoomTargetRef={laserZoomRef}  />
                 <FloorLaser />
@@ -166,6 +160,17 @@ function Glaucoma() {
                 </Canvas>
               </div>
             </div>
+
+            <div className="tratamiento-card-glaucoma">
+              <p className="tratamiento-text-glaucoma">
+              Aunque no se puede curar del todo, el glaucoma se puede tratar con gotas especiales que 
+              ayudan a bajar la presión del ojo, a veces con pastillas, o usando una luz láser que hace 
+              un horificio en el ojo para que la presión salga. Si eso no funciona, el doctor puede 
+              hacer una operación pequeña. Lo más importante es seguir yendo a chequeos médicos para 
+              cuidar bien los ojos.
+              </p>
+            </div>
+
           </div>
         </div>
         <div className="tratamientos-footer-glaucoma"></div>
