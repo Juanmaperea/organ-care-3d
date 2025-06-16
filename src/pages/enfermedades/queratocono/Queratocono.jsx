@@ -133,7 +133,7 @@ export default function Queratocono() {
               </mesh>
             </Canvas>
             <div className="sintoma-nota-kerato">
-              💡 Haz clic en el modelo para que reaccione a la luz y giralo con
+              💡 Haz clic en el modelo para que reaccione a la luz y gíralo con
               ← y →
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function Queratocono() {
               </mesh>
             </Canvas>
             <div className="sintoma-nota-kerato">
-              💡 Haz clic en el modelo para que reaccione a la luz y giralo con
+              💡 Haz clic en las gafas para ver cómo mejoran tu visión y gíralas con 
               ← y →
             </div>
           </div>
@@ -240,7 +240,7 @@ export default function Queratocono() {
               </mesh>
             </Canvas>
             <div className="sintoma-nota-kerato">
-              💡 Haz clic en el modelo para que reaccione a la luz y giralo con
+              💡 Haz clic en el instrumento para activarlo y gíralo con
               ← y →
             </div>
           </div>
