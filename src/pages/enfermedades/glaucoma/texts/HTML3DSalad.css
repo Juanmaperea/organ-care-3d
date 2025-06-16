@@ -1,0 +1,15 @@
+.kitchen-title h1 {
+    font-family: 'Georgia', serif;
+    color: #fff8e7; /* un blanco cálido tipo "crema" */
+    background-color: rgba(120, 60, 20, 0.6); /* marrón cálido semitransparente */
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-shadow: 
+        0 0 2px #ffeccc,
+        0 0 6px #d49f70,
+        0 0 12px #a45c40;
+
+    font-size: 2rem;
+    box-shadow: 0 0 10px rgba(80, 40, 20, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}

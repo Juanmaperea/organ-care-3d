@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import './Glaucoma.css';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Environment } from '@react-three/drei';
+import { Environment, Sparkles } from '@react-three/drei';
 
 import Eye from './models-3d/Eye';
 import LightEye from './lights/LightsEye';
@@ -25,6 +25,14 @@ import HTML3DLaser from "./texts/HTML3DLaser";
 import Text3DLaser from "./texts/treatments-3D2D/3DTreatment";
 import Text2DLaser from "./texts/treatments-3D2D/2DTreatment";
 
+import Salad from './models-3d/Salad';
+import LightSalad from './lights/LightsSalad';
+import FloorSalad from './floors/FloorSalad';
+import HTML3DSalad from "./texts/HTML3DSalad";
+import ControlSalad from "./controls/ControlsSalad";
+import Text3DSalad from "./texts/prevention-3D2D/3DPrevention";
+import Text2DSalad from "./texts/prevention-3D2D/2DPrevention";
+
 import Instructions from "./texts/Instructions";
 
 function Glaucoma() {
@@ -34,6 +42,9 @@ function Glaucoma() {
 
   const laserRef = useRef();
   const laserZoomRef = useRef();
+
+  const saladRef = useRef();
+  const saladZoomRef = useRef();
 
   return (
     <div className="glaucoma-container">
@@ -174,6 +185,55 @@ function Glaucoma() {
           </div>
         </div>
         <div className="tratamientos-footer-glaucoma"></div>
+
+      {/*SECCIÓN: PREVENCIÓN */}
+      <div className="prevenciones-section-glaucoma">
+          <div className="prevenciones-header-glaucoma">
+            <h2 className="prevenciones-title-glaucoma">PREVENCIÓN</h2>
+          </div>
+          <div className="prevenciones-container-glaucoma">
+
+            <div className="prevencion-card-glaucoma">
+              <p className="prevencion-text-glaucoma">
+              Cuando alguien tiene glaucoma, al principio no siente nada raro. Pero poco a poco empieza 
+              a ver menos por los lados, como si estuviera mirando por un tubo o una pajilla. A veces, si 
+              el glaucoma es muy fuerte, pueden doler los ojos, ver luces como arcoíris alrededor de los 
+              focos, o sentir el ojo rojo o pesado. Muchas veces no se nota hasta que ya ha avanzado bastante.
+              </p>
+            </div>
+
+            <div className="prevencion-card-glaucoma" style={{ position: 'relative', height: '400px' }} ref={saladZoomRef} >
+              <Canvas shadows camera={{ position: [2, 2, 5], fov: 50 }} style={{ background: '#FFFFFF' }}>
+                <LightSalad/>
+                <Environment 
+                  files={[
+                    "prev_px.png",
+                    "prev_nx.png",
+                    "prev_py.png",
+                    "prev_ny.png",
+                    "prev_pz.png",
+                    "prev_nz.png",
+                  ]} 
+                  path="background/glaucoma/prevention/"
+                  background />
+                <Sparkles count={100} size={2} scale={10} color="white" />
+                <OrbitControls />
+                <HTML3DSalad title={"BUENA ALIMENTACIÓN"}  />
+                <Text3DSalad />
+                <Text2DSalad />
+                <Salad ref={saladRef} />
+                <ControlSalad targetRef={saladRef} zoomTargetRef={saladZoomRef}  />
+                <FloorSalad />
+              </Canvas>
+              <div className="prevencion-nota-glaucoma">
+                <Canvas>
+                  <Instructions title={"💡 Haz clic en el modelo para interactuar. Usa las teclas ← y → para opacarlo."} />
+                </Canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="prevenciones-footer-glaucoma"></div>
 
     </div>
   );

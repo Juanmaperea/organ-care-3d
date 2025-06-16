@@ -17,7 +17,7 @@ const Laser = forwardRef((props, ref) => {
             receiveShadow
             geometry={nodes.Laser.geometry}
             material={materials.LaserMaterial}
-            scale={4}
+            scale={5}
             />
         </group>
     );
